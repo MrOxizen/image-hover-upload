@@ -14,8 +14,7 @@ class Effects6 extends Public_Render {
         wp_enqueue_style('oxi-image-hover-general', OXI_IMAGE_HOVER_UPLOAD_URL . '/General/Files/general.css', false, OXI_IMAGE_HOVER_PLUGIN_VERSION);
         wp_enqueue_style('oxi-image-hover-general-style-6', OXI_IMAGE_HOVER_UPLOAD_URL . '/General/Files/style-6.css', false, OXI_IMAGE_HOVER_PLUGIN_VERSION);
     }
-
-    public function default_render($style, $child, $admin) {
+public function default_render($style, $child, $admin) {
 
         foreach ($child as $key => $val) {
             $value = json_decode(stripslashes($val['rawdata']), true);
@@ -70,7 +69,6 @@ class Effects6 extends Public_Render {
             endif;
         }
     }
-
     public function old_render() {
         $style = $this->dbdata['css'];
         $styledata = explode('|', $style);
