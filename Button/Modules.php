@@ -683,13 +683,12 @@ class Modules extends Admin_Render {
             'description' => 'Add Your Image Serial Name for rearrange Image.'
                 ]
         );
-        $this->add_control(
+          $this->add_control(
                 'image_hover_first_icon', $this->style, [
             'label' => __('First Icon', OXI_IMAGE_HOVER_TEXTDOMAIN),
             'type' => Controls::ICON,
             'separator' => TRUE,
-            'default' => 'Heading',
-            'placeholder' => 'Heading',
+            'default' => 'fab fa-facebook-f',
             'description' => 'Add Your Image Hover First Icon.'
                 ]
         );
@@ -707,8 +706,7 @@ class Modules extends Admin_Render {
             'label' => __('Second Icon', OXI_IMAGE_HOVER_TEXTDOMAIN),
             'type' => Controls::ICON,
             'separator' => TRUE,
-            'default' => 'Heading',
-            'placeholder' => 'Heading',
+            'default' => 'fab fa-twitter',
             'description' => 'Add Your Image Hover Second Icon.'
                 ]
         );
