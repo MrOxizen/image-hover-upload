@@ -12,6 +12,7 @@ class Effects5 extends Public_Render {
 
     public function public_css() {
         wp_enqueue_style('oxi-image-hover-flipbox', OXI_IMAGE_HOVER_UPLOAD_URL . '/Flipbox/Files/flipbox.css', false, OXI_IMAGE_HOVER_PLUGIN_VERSION);
+        wp_enqueue_style('oxi-image-hover-flipbox-style-5', OXI_IMAGE_HOVER_UPLOAD_URL . '/Flipbox/Files/style-5.css', false, OXI_IMAGE_HOVER_PLUGIN_VERSION);
     }
 
     public function default_render($style, $child, $admin) {
@@ -24,7 +25,7 @@ class Effects5 extends Public_Render {
 //                $frontheading = '<div class="oxi-image-hover-heading '. $style['oxi-image-flip-front-heading-underline'] .'">' . $this->text_render($value['image_hover_front_heading']) . '</div>';
 //            endif;
             if ($value['image_hover_back_heading'] != ''):
-                $backheading = '<div class="oxi-image-hover-heading '. $style['oxi-image-flip-back-heading-underline'] .'' . $this->style['oxi-image-flip-back-heading-animation'] . ' ' . $this->style['oxi-image-flip-back-animation-delay'] . '">' . $this->text_render($value['image_hover_back_heading']) . '</div>';
+                $backheading = '<div class="oxi-image-hover-heading ' . $style['oxi-image-flip-back-heading-underline'] . '' . $this->style['oxi-image-flip-back-heading-animation'] . ' ' . $this->style['oxi-image-flip-back-animation-delay'] . '">' . $this->text_render($value['image_hover_back_heading']) . '</div>';
             endif;
 
 //            if ($value['image_hover_front_description'] != ''):
@@ -79,16 +80,16 @@ class Effects5 extends Public_Render {
                                 </div>
                            ' . $ht . '
                         </div>';
-            if ($admin == 'admin') :
-                echo '  <div class="oxi-addons-admin-absulote">
-                                <div class="oxi-addons-admin-absulate-edit">
-                                    <button class="btn btn-primary shortcode-addons-template-item-edit" type="button" value="' . $val['id'] . '">Edit</button>
-                                </div>
-                                <div class="oxi-addons-admin-absulate-delete">
-                                <button class="btn btn-danger shortcode-addons-template-item-delete" type="submit" value="' . $val['id'] . '">Delete</button>
-                                </div>
-                            </div>';
-            endif;
+                        if ($admin == 'admin') :
+                            echo '  <div class="oxi-addons-admin-absulote">
+                                            <div class="oxi-addons-admin-absulate-edit">
+                                                <button class="btn btn-primary shortcode-addons-template-item-edit" type="button" value="' . $val['id'] . '">Edit</button>
+                                            </div>
+                                            <div class="oxi-addons-admin-absulate-delete">
+                                            <button class="btn btn-danger shortcode-addons-template-item-delete" type="submit" value="' . $val['id'] . '">Delete</button>
+                                            </div>
+                                        </div>';
+                        endif;
 
             if ($this->media_background_render('image_hover_front_image', $value) != ''):
                 $url = $this->media_background_render('image_hover_front_image', $value);

@@ -420,14 +420,7 @@ class Effects23 extends Modules {
             'description' => 'Add Your Desire Link or Url Unless make it blank'
                 ]
         );
-        $this->add_control(
-                'image_hover_button_text', $this->style, [
-            'label' => __('Button Text', OXI_IMAGE_HOVER_TEXTDOMAIN),
-            'type' => Controls::TEXT,
-            'default' => '',
-            'description' => 'Customize your button text. Button will only view while Url given'
-                ]
-        );
+
         echo '</div>';
     }
 

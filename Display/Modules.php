@@ -12,7 +12,7 @@ use OXI_IMAGE_HOVER_PLUGINS\Page\Admin_Render as Admin_Render;
 
 class Modules extends Admin_Render {
 
-    use \OXI_IMAGE_HOVER_UPLOADS\Display\Files\Post_Query;
+    use \OXI_IMAGE_HOVER_UPLOADS\Display\Files\Admin_Query;
 
     public function register_controls() {
         $this->start_section_header(
@@ -112,7 +112,7 @@ class Modules extends Admin_Render {
         foreach ($this->post_type() as $key => $value) {
             if ($key != 'page') :
                 $this->add_control(
-                        'display_post_post_type-cat' . $key,
+                        $key . '_category',
                         $this->style,
                         [
                             'label' => __(' Category', OXI_IMAGE_HOVER_TEXTDOMAIN),
@@ -126,7 +126,7 @@ class Modules extends Admin_Render {
                         ]
                 );
                 $this->add_control(
-                        'display_post_post_type-tag' . $key,
+                        $key . '_tag',
                         $this->style,
                         [
                             'label' => __(' Tags', OXI_IMAGE_HOVER_TEXTDOMAIN),
@@ -142,7 +142,7 @@ class Modules extends Admin_Render {
             endif;
 
             $this->add_control(
-                    'display_post_post_type-include' . $key,
+                    $key . '_include',
                     $this->style,
                     [
                         'label' => __(' Include Post', OXI_IMAGE_HOVER_TEXTDOMAIN),
@@ -156,7 +156,7 @@ class Modules extends Admin_Render {
                     ]
             );
             $this->add_control(
-                    'display_post_post_type-exclude' . $key,
+                    $key . '_exclude',
                     $this->style,
                     [
                         'label' => __(' Exclude Post', OXI_IMAGE_HOVER_TEXTDOMAIN),
@@ -194,7 +194,7 @@ class Modules extends Admin_Render {
                     'loader' => TRUE,
                     'type' => Controls::SELECT,
                     'options' => $this->post_style(),
-                    'description' => 'Customize your Display Post Style based on your Created Effects.'
+                    'description' => 'Customize your Display Post Style based on your Created Effects. Kindly save and Reload after style selected.'
                 ]
         );
         $this->add_control(
@@ -202,6 +202,16 @@ class Modules extends Admin_Render {
                 $this->style,
                 [
                     'label' => __('Post Per Page', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                    'type' => Controls::NUMBER,
+                    'loader' => TRUE,
+                    'min' => 1,
+                ]
+        );
+        $this->add_control(
+                'display_post_excerpt',
+                $this->style,
+                [
+                    'label' => __('Excerpt Word Limit', OXI_IMAGE_HOVER_TEXTDOMAIN),
                     'type' => Controls::NUMBER,
                     'loader' => TRUE,
                     'min' => 1,
@@ -315,6 +325,9 @@ class Modules extends Admin_Render {
             'type' => Controls::TEXT,
             'default' => 'Load More',
             'placeholder' => 'Load More Button',
+            'selector' => [
+                   '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button span' => '',
+            ]
                 ]
         );
 
@@ -341,7 +354,7 @@ class Modules extends Admin_Render {
                         ],
                     ],
                     'selector' => [
-                        '{{WRAPPER}} .oxi-image-hover-figure-caption .oxi-image-hover-button' => 'text-align:{{VALUE}}',
+                        '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap' => 'text-align:{{VALUE}};',
                     ]
                 ]
         );
@@ -350,7 +363,9 @@ class Modules extends Admin_Render {
                 'display_post_load_button_typho', $this->style, [
             'type' => Controls::TYPOGRAPHY,
             'selector' => [
-                '{{WRAPPER}} .oxi-image-hover-button a.oxi-image-btn' => '',
+                '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button' => '',
+                '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button .oxi-image-hover-loader button__loader' => '',
+                '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button span' => '',
             ]
                 ]
         );
@@ -370,8 +385,12 @@ class Modules extends Admin_Render {
             'type' => Controls::COLOR,
             'default' => '#ffffff',
             'selector' => [
-                '{{WRAPPER}} .oxi-image-hover-button a.oxi-image-btn' => 'color: {{VALUE}};',
-                '{{WRAPPER}} .oxi-image-hover-button a.oxi-image-btn:hover' => 'color: {{VALUE}};',
+                '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button' => 'color: {{VALUE}};',
+                '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button .oxi-image-hover-loader button__loader' => 'color: {{VALUE}};',
+                '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button span' => 'color: {{VALUE}};',
+                '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button:hover' => 'color: {{VALUE}};',
+                '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button:hover .oxi-image-hover-loader button__loader' => 'color: {{VALUE}};',
+                '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button:hover span' => 'color: {{VALUE}};',
             ]
                 ]
         );
@@ -381,8 +400,8 @@ class Modules extends Admin_Render {
             'type' => Controls::GRADIENT,
             'default' => 'rgba(171, 0, 201, 1)',
             'selector' => [
-                '{{WRAPPER}} .oxi-image-hover-button a.oxi-image-btn' => 'background: {{VALUE}};',
-                '{{WRAPPER}} .oxi-image-hover-button a.oxi-image-btn:hover' => 'background: {{VALUE}};',
+                '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button' => 'background: {{VALUE}};',
+                '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button:hover' => 'background: {{VALUE}};',
             ]
                 ]
         );
@@ -392,7 +411,7 @@ class Modules extends Admin_Render {
                 [
                     'type' => Controls::BORDER,
                     'selector' => [
-                        '{{WRAPPER}} .oxi-image-hover-button a.oxi-image-btn' => ''
+                        '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button' => ''
                     ],
                 ]
         );
@@ -400,8 +419,7 @@ class Modules extends Admin_Render {
                 'display_post_load_button_tx_shadow', $this->style, [
             'type' => Controls::TEXTSHADOW,
             'selector' => [
-                '{{WRAPPER}} .oxi-image-hover-button a.oxi-image-btn' => '',
-                '{{WRAPPER}} .oxi-image-hover-button a.oxi-image-btn:hover' => '',
+                '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button span' => '',
             ]
                 ]
         );
@@ -432,8 +450,8 @@ class Modules extends Admin_Render {
                 ],
             ],
             'selector' => [
-                '{{WRAPPER}} .oxi-image-hover-button a.oxi-image-btn' => 'border-radius:{{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                '{{WRAPPER}} .oxi-image-hover-button a.oxi-image-btn:hover' => 'border-radius:{{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button' => 'border-radius:{{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button:hover' => 'border-radius:{{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
                 ]
         );
@@ -441,8 +459,8 @@ class Modules extends Admin_Render {
                 'display_post_load_button_boxshadow', $this->style, [
             'type' => Controls::BOXSHADOW,
             'selector' => [
-                '{{WRAPPER}} .oxi-image-hover-button a.oxi-image-btn' => '',
-                '{{WRAPPER}} .oxi-image-hover-button a.oxi-image-btn:hover' => '',
+                '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button' => '',
+                '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button:hover' => '',
             ]
                 ]
         );
@@ -454,7 +472,9 @@ class Modules extends Admin_Render {
             'type' => Controls::COLOR,
             'default' => '#ffffff',
             'selector' => [
-                '{{WRAPPER}} .oxi-image-hover-caption-tab .oxi-image-hover-button a.oxi-image-btn:hover' => 'color: {{VALUE}};',
+                '{{WRAPPER}} .oxi-addons-row .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button:hover' => 'color: {{VALUE}};',
+                '{{WRAPPER}} .oxi-addons-row .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button:hover .oxi-image-hover-loader button__loader' => 'color: {{VALUE}};',
+                '{{WRAPPER}} .oxi-addons-row .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button:hover span' => 'color: {{VALUE}};',
             ]
                 ]
         );
@@ -464,7 +484,7 @@ class Modules extends Admin_Render {
             'type' => Controls::GRADIENT,
             'default' => '#ffffff',
             'selector' => [
-                '{{WRAPPER}} .oxi-image-hover-caption-tab .oxi-image-hover-button a.oxi-image-btn:hover' => 'background: {{VALUE}};',
+                '{{WRAPPER}} .oxi-addons-row .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button:hover' => 'background: {{VALUE}};',
             ]
                 ]
         );
@@ -474,7 +494,7 @@ class Modules extends Admin_Render {
                 [
                     'type' => Controls::BORDER,
                     'selector' => [
-                        '{{WRAPPER}} .oxi-image-hover-caption-tab .oxi-image-hover-button a.oxi-image-btn:hover' => ''
+                        '{{WRAPPER}} .oxi-addons-row .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button:hover' => ''
                     ],
                 ]
         );
@@ -482,7 +502,7 @@ class Modules extends Admin_Render {
                 'display_post_load_button_hover_tx_shadow', $this->style, [
             'type' => Controls::TEXTSHADOW,
             'selector' => [
-                '{{WRAPPER}} .oxi-image-hover-caption-tab .oxi-image-hover-button a.oxi-image-btn:hover' => '',
+                '{{WRAPPER}} .oxi-addons-row .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button:hover span' => '',
             ]
                 ]
         );
@@ -513,7 +533,7 @@ class Modules extends Admin_Render {
                 ],
             ],
             'selector' => [
-                '{{WRAPPER}} .oxi-image-hover-caption-tab .oxi-image-hover-button a.oxi-image-btn:hover' => 'border-radius:{{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                '{{WRAPPER}} .oxi-addons-row .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button:hover' => 'border-radius:{{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
                 ]
         );
@@ -521,7 +541,7 @@ class Modules extends Admin_Render {
                 'display_post_load_button_button_boxshadow', $this->style, [
             'type' => Controls::BOXSHADOW,
             'selector' => [
-                '{{WRAPPER}} .oxi-image-hover-caption-tab .oxi-image-hover-button a.oxi-image-btn:hover' => '',
+                '{{WRAPPER}} .oxi-addons-row .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button:hover' => '',
             ]
                 ]
         );
@@ -556,7 +576,7 @@ class Modules extends Admin_Render {
                 ],
             ],
             'selector' => [
-                '{{WRAPPER}} .oxi-image-hover-button a.oxi-image-btn' => 'padding:{{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button' => 'padding:{{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ]
                 ]
         );
@@ -586,7 +606,7 @@ class Modules extends Admin_Render {
                 ],
             ],
             'selector' => [
-                '{{WRAPPER}} .oxi-image-hover-button a.oxi-image-btn' => 'margin:{{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap' => 'padding:{{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ]
                 ]
         );

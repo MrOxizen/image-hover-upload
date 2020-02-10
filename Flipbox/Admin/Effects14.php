@@ -230,6 +230,7 @@ class Effects14 extends Modules {
             ],
                 ]
         );
+        
         $this->add_control(
                 'oxi-image-flip-front-icon-color', $this->style, [
             'label' => __('Color', OXI_IMAGE_HOVER_TEXTDOMAIN),
@@ -422,24 +423,24 @@ class Effects14 extends Modules {
                 ],
             ],
             'selector' => [
-                '{{WRAPPER}} .oxi-image-hover-figure-frontend:hover .oxi-image-hover-figure-frontend, '
+                '{{WRAPPER}} .oxi-image-hover-figure:hover .oxi-image-hover-figure-frontend, '
                 . '{{WRAPPER}} .oxi-image-hover-figure.oxi-touch .oxi-image-hover-figure-frontend, '
-                . '{{WRAPPER}} .oxi-image-hover-figure-frontend:hover .oxi-image-hover-figure-frontend:before, '
+                . '{{WRAPPER}} .oxi-image-hover-figure:hover .oxi-image-hover-figure-frontend:before, '
                 . '{{WRAPPER}} .oxi-image-hover-figure.oxi-touch .oxi-image-hover-figure-frontend:before, '
-                . '{{WRAPPER}} .oxi-image-hover-figure-frontend:hover .oxi-image-hover-figure-frontend:after, '
+                . '{{WRAPPER}} .oxi-image-hover-figure:hover .oxi-image-hover-figure-frontend:after, '
                 . '{{WRAPPER}} .oxi-image-hover-figure.oxi-touch .oxi-image-hover-figure-frontend:after, '
-                . '{{WRAPPER}} .oxi-image-hover-figure-frontend:hover .oxi-image-hover-figure-front-section, '
+                . '{{WRAPPER}} .oxi-image-hover-figure:hover .oxi-image-hover-figure-front-section, '
                 . '{{WRAPPER}} .oxi-image-hover-figure.oxi-touch .oxi-image-hover-figure-front-section, '
-                . '{{WRAPPER}} .oxi-image-hover-figure-frontend:hover .oxi-image-hover-figure-front-section img, '
+                . '{{WRAPPER}} .oxi-image-hover-figure:hover .oxi-image-hover-figure-front-section img, '
                 . '{{WRAPPER}} .oxi-image-hover-figure.oxi-touch .oxi-image-hover-figure-front-section img, '
-                . '{{WRAPPER}} .oxi-image-hover-figure-backend-section-body, '
-                . '{{WRAPPER}} .oxi-image-hover-figure-frontend:hover .oxi-image-hover-figure-backend, '
+                . '{{WRAPPER}} .oxi-image-hover-figure:hover .oxi-image-hover-figure-backend-section-body,  '
+                . '{{WRAPPER}} .oxi-image-hover-figure:hover .oxi-image-hover-figure-backend, '
                 . '{{WRAPPER}} .oxi-image-hover-figure.oxi-touch .oxi-image-hover-figure-backend, '
-                . '{{WRAPPER}} .oxi-image-hover-figure-frontend:hover .oxi-image-hover-figure-backend:before, '
+                . '{{WRAPPER}} .oxi-image-hover-figure:hover .oxi-image-hover-figure-backend:before, '
                 . '{{WRAPPER}} .oxi-image-hover-figure.oxi-touch .oxi-image-hover-figure-backend:before, '
-                . '{{WRAPPER}} .oxi-image-hover-figure-frontend:hover .oxi-image-hover-figure-backend:after, '
+                . '{{WRAPPER}} .oxi-image-hover-figure:hover .oxi-image-hover-figure-backend:after, '
                 . '{{WRAPPER}} .oxi-image-hover-figure.oxi-touch .oxi-image-hover-figure-backend:after, '
-                . '{{WRAPPER}} .oxi-image-hover-figure-frontend:hover .oxi-image-hover-figure-back-section, '
+                . '{{WRAPPER}} .oxi-image-hover-figure:hover .oxi-image-hover-figure-back-section, '
                 . '{{WRAPPER}} .oxi-image-hover-figure.oxi-touch .oxi-image-hover-figure-back-section ' => 'border-radius:{{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
                 ]

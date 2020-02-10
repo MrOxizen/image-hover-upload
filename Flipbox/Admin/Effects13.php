@@ -200,34 +200,13 @@ class Effects13 extends Modules {
         );
 
 
-        $this->add_responsive_control(
-                'oxi-image-flip-front-number-size', $this->style, [
-            'label' => __('Number Size', OXI_IMAGE_HOVER_TEXTDOMAIN),
-            'type' => Controls::SLIDER,
-            'default' => [
-                'unit' => 'px',
-                'size' => 20,
-            ],
-            'range' => [
-                'px' => [
-                    'min' => 0,
-                    'max' => 500,
-                    'step' => 1,
-                ],
-                '%' => [
-                    'min' => 0,
-                    'max' => 100,
-                    'step' => 1,
-                ],
-                'em' => [
-                    'min' => 0,
-                    'max' => 100,
-                    'step' => .1,
-                ],
-            ],
+        $this->add_group_control(
+                'oxi-image-flip-front-number-typho', $this->style, [
+            'type' => Controls::TYPOGRAPHY,
+            'include' => Controls::ALIGNNORMAL,
             'selector' => [
-                '{{WRAPPER}} .oxi-image-hover-figure-front-section .oxi-image-hover-number' => 'font-size:{{SIZE}}{{UNIT}};',
-            ],
+                '{{WRAPPER}} .oxi-image-hover-figure-front-section .oxi-image-hover-number' => '',
+            ]
                 ]
         );
         $this->add_control(
@@ -615,7 +594,7 @@ class Effects13 extends Modules {
                 . '{{WRAPPER}} .oxi-image-hover-figure.oxi-touch .oxi-image-hover-figure-front-section, '
                 . '{{WRAPPER}} .oxi-image-hover-figure:hover  .oxi-image-hover-figure-front-section img, '
                 . '{{WRAPPER}} .oxi-image-hover-figure.oxi-touch .oxi-image-hover-figure-front-section img, '
-                . '{{WRAPPER}} .oxi-image-hover-figure-backend-section-body, '
+                . '{{WRAPPER}} .oxi-image-hover-figure:hover .oxi-image-hover-figure-backend-section-body,  '
                 . '{{WRAPPER}} .oxi-image-hover-figure:hover  .oxi-image-hover-figure-backend, '
                 . '{{WRAPPER}} .oxi-image-hover-figure.oxi-touch .oxi-image-hover-figure-backend, '
                 . '{{WRAPPER}} .oxi-image-hover-figure:hover  .oxi-image-hover-figure-backend:before, '

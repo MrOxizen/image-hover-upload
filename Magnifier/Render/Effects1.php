@@ -39,15 +39,14 @@ class Effects1 extends Public_Render {
         endif;
     }
 
-    public function default_render($style, $child, $admin) { 
-        echo '<div class="oxi_addons__image_magnifier_wrapper">';
+    public function default_render($style, $child, $admin) {  
         foreach ($child as $key => $val) {
             $data = json_decode(stripslashes($val['rawdata']), true);       
             $image = ''; 
             if ($this->custom_media_render('oxi_image_magnifier_img', $data) != '') {
                 $image = '<img class="oxi_addons__image   oxi__image_' . $this->oxiid . '_'.$key.' ' . $style['oxi_image_magnifier_image_switcher'] . '  ' . $style['oxi_image_magnifier_grayscale_switter'] . '  " src="' . $this->custom_media_render('oxi_image_magnifier_img', $data) . '" alt="slider image"/>';
             }
-            echo ' <div class="oxi_addons__image_magnifier_column ' . $this->column_render('oxi_image_magnifier_column', $style) . ' ' . ($admin == "admin" ? 'oxi-addons-admin-edit-list' : '') . '" > 
+            echo ' <div class="oxi_addons__image_magnifier_column ' . $this->column_render('oxi-image-hover-col', $style) . ' ' . ($admin == "admin" ? 'oxi-addons-admin-edit-list' : '') . '" > 
                  <div class="oxi_addons__image_magnifier_style_1 oxi_addons__image_magnifier  ' . $style['oxi_image_magnifier_image_switcher'] . ' " >
                     ' . $image . '
                 </div>';
@@ -62,8 +61,7 @@ class Effects1 extends Public_Render {
                         </div>';
                 endif;
             echo '</div>';
-        }
-     echo '</div>'; 
+        } 
     }
 
     public function inline_public_jquery()

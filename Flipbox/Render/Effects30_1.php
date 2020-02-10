@@ -62,7 +62,7 @@ class Effects1 extends Public_Render {
                         <div class="oxi-image-hover-style-flipbox">
                             ' . $hr . '
                                 <div class="oxi-image-hover oxi-image-flipbox-hover oxi-image-flipbox-hover-style-1 oxi-image-flipbox-hover-' . $this->oxiid . '-' . $val['id'] . '">
-                                    <div class="oxi-image-hover-figure oxi-image-flip-top-to-bottom ' . $style['image_hover_effects'] . ' ' . $style['image_hover_timing_type'] . '">
+                                    <div class="oxi-image-hover-figure ' . $style['image_hover_effects'] . ' ' . $style['image_hover_timing_type'] . '">
                                         <div class="oxi-image-hover-figure-frontend">
                                             <div class="oxi-image-hover-figure-front-section ' . $this->style['oxi-image-flip-front-alignment'] . '">
                                                  ' . $image . '  

@@ -27,9 +27,7 @@ class Effects1 extends Public_Render
   
 
     public function default_render($style, $child, $admin)
-    {
-
-        echo '<div class="oxi_addons__image_comparison_wrapper">';
+    { 
         foreach ($child as $key => $val) {
             $data = json_decode(stripslashes($val['rawdata']), true); 
             $imageone = $imagetwo = '';
@@ -39,7 +37,7 @@ class Effects1 extends Public_Render
             if ($this->media_render('oxi_image_comparison_image_two', $data) != '') {
                 $imagetwo = '<img class="oxi-img" ' . $this->media_render('oxi_image_comparison_image_two', $data) . ' />';
             }
-            echo '<div class="oxi-addons-main-wrapper-image-comparison-style-1 oxi-addons-main-wrapper-image-comparison ' . $this->column_render('oxi_image_magnifier_column', $style) . ' ' . ($admin == "admin" ? 'oxi-addons-admin-edit-list' : '') . '">
+            echo '<div class="oxi-addons-main-wrapper-image-comparison-style-1 oxi-addons-main-wrapper-image-comparison ' . $this->column_render('oxi-image-hover-col', $style) . ' ' . ($admin == "admin" ? 'oxi-addons-admin-edit-list' : '') . '">
                     <div class="oxi-addons-main '.$style['oxi_image_magnifier_image_switcher'].'">
                         <div class="oxi-addons-comparison-' . $this->oxiid . '_' . $key . '">
                             ' . $imageone . '
@@ -57,8 +55,7 @@ class Effects1 extends Public_Render
                         </div>';
             endif;
             echo '</div>';
-        }
-        echo '</div>';
+        } 
     }
 
     public function inline_public_jquery()

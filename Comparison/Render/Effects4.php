@@ -32,12 +32,11 @@ class Effects4 extends Public_Render
     }
    
     public function default_render($style, $child, $admin)
-    {  
-        echo '<div class="oxi_addons__image_comparison_wrapper">';
+    {   
         foreach ($child as $key => $val) {
             $data = json_decode(stripslashes($val['rawdata']), true); 
             
-            echo '<div class="oxi_addons_image_style_4_box oxi-addons-main-wrapper-image-comparison ' . $this->column_render('oxi_image_magnifier_column', $style) . ' ' . ($admin == "admin" ? 'oxi-addons-admin-edit-list' : '') . '">
+            echo '<div class="oxi_addons_image_style_4_box oxi-addons-main-wrapper-image-comparison ' . $this->column_render('oxi-image-hover-col', $style) . ' ' . ($admin == "admin" ? 'oxi-addons-admin-edit-list' : '') . '">
                     <div class="oxi_addons_image_style_4_box_body oxi-addons-main '.$style['oxi_image_magnifier_image_switcher'].'">
                             <div class="oxi_addons_hover_view_img" style="background: url(\'' . $this->custom_media_render('oxi_image_comparison_image_one', $data) . '\') no-repeat fixed;">';
                                 $width = 100;
@@ -59,8 +58,7 @@ class Effects4 extends Public_Render
                             </div>';
                 endif;
             echo '</div>';
-        }
-        echo '</div>';
+        } 
     }
 
 

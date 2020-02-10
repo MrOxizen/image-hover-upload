@@ -98,7 +98,7 @@ class Effects1 extends Public_Render
                 </a>';
             }
 
-            echo '<div class="oxi_addons__light_box_style_1 oxi_addons__light_box ' . $this->column_render('oxi_image_light_box_column', $style) . '  ' . ($admin == "admin" ? 'oxi-addons-admin-edit-list' : '') . ' ">
+            echo '<div class="oxi_addons__light_box_style_1 oxi_addons__light_box ' . $this->column_render('oxi-image-hover-col', $style) . '  ' . ($admin == "admin" ? 'oxi-addons-admin-edit-list' : '') . ' ">
                     <div class="oxi_addons__light_box_parent oxi_addons__light_box_parent-' . $this->oxiid . '-' . $key . '">
                         ' . $light_box . '
                     </div>';

@@ -8,27 +8,30 @@ if (!defined('ABSPATH')) {
 
 use OXI_IMAGE_HOVER_PLUGINS\Page\Public_Render;
 
-class Effects1 extends Public_Render
+class Effects2 extends Public_Render
 {
 
     public function public_jquery()
     {
-        wp_enqueue_script('oxi-image-carousel-slick.min', OXI_IMAGE_HOVER_UPLOAD_URL . 'Carousel/Files/slick.min.js', false, OXI_IMAGE_HOVER_PLUGIN_VERSION);
-        $this->JSHANDLE = 'oxi-image-carousel-slick.min';
+        wp_enqueue_script('oxi-image-carousel-flipster.min.js', OXI_IMAGE_HOVER_UPLOAD_URL . 'Carousel/Files/jquery.flipster.min.js', false, OXI_IMAGE_HOVER_PLUGIN_VERSION);
+        $this->JSHANDLE = 'oxi-image-carousel-flipster.min.js';
     }
 
     public function public_css()
     {
-        wp_enqueue_style('oxi-image-hover-carousel-slick', OXI_IMAGE_HOVER_UPLOAD_URL . '/Carousel/Files/slick.css', false, OXI_IMAGE_HOVER_PLUGIN_VERSION);
-        wp_enqueue_style('oxi-image-hover-style-1', OXI_IMAGE_HOVER_UPLOAD_URL . '/Carousel/Files/style-1.css', false, OXI_IMAGE_HOVER_PLUGIN_VERSION);
+        wp_enqueue_style('oxi-image-hover-carousel-flipster.min.css', OXI_IMAGE_HOVER_UPLOAD_URL . '/Carousel/Files/jquery.flipster.min.css', false, OXI_IMAGE_HOVER_PLUGIN_VERSION);
+        wp_enqueue_style('oxi-image-hover-style-2', OXI_IMAGE_HOVER_UPLOAD_URL . '/Carousel/Files/style-2.css', false, OXI_IMAGE_HOVER_PLUGIN_VERSION);
     }
 
     public function render()
     {
         echo '<div class="oxi-addons-container ' . $this->WRAPPER . ' oxi-image-hover-wrapper-' . (array_key_exists('carousel_register_style', $this->style) ? $this->style['carousel_register_style'] : '') . '">
-                 <div class="oxi-addons-row oxi-addons-col-edit">';
+                 <div class="oxi-addons-row">
+                    <ul class="flip-items oxi-addons-col-edit">';
         $this->default_render($this->style, $this->child, $this->admin);
-        echo '   </div>
+        echo '   
+                    </ul>
+                </div>
               </div>';
     }
 
@@ -57,11 +60,6 @@ class Effects1 extends Public_Render
         endif;
     }
 
-    public function inline_public_css()
-    {
-        $css = '';
-    }
-
     public function default_render($style, $child, $admin)
     {
         if (!array_key_exists('carousel_register_style', $style)) :
@@ -78,64 +76,59 @@ class Effects1 extends Public_Render
         $cls = '\OXI_IMAGE_HOVER_UPLOADS\\' . $StyleName[0] . '\Render\Effects' . $StyleName[1];
         new $cls($styledata, $files, 'request');
 
-        $col = json_decode(stripslashes($styledata['rawdata']), true);
 
+        $col = json_decode(stripslashes($styledata['rawdata']), true);
         $lap = $this->public_column_render($col['oxi-image-hover-col-lap']);
         $tab = $this->public_column_render($col['oxi-image-hover-col-tab']);
         $mobile = $this->public_column_render($col['oxi-image-hover-col-mob']);
 
-        $lap_item = $style['carousel_item_slide-lap-size'];
-        $tab_item = $style['carousel_item_slide-tab-size'];
-        $mobile_item = $style['carousel_item_slide-mob-size'];
-
         $prev = $this->font_awesome_render($style['carousel_left_arrow']);
         $next = $this->font_awesome_render($style['carousel_right_arrow']);
+        $start = '';
 
-        $autoplay = ($style['carousel_autoplay'] == 'yes') ? 'true' : 'false';
-        $autoplayspeed = $style['carousel_autoplay_speed'];
-        $speed = $style['carousel_speed'];
+        $effect = $style['carousel_effect'];
+        $autoplayspeed = !empty($style['carousel_autoplay_speed']) ? $style['carousel_autoplay_speed'] : 2000;
+        $autoplay = ($style['carousel_autoplay'] == 'yes') ? $autoplayspeed : 'false';
+        $fadein = $style['carousel_fadeIn'];
+        if ($style['carousel_center_mode'] == 'yes') :
+            $start = 'center';
+        else :
+            $start = $style['carousel_start_number'];
+        endif;
         $pause_on_hover = ($style['carousel_pause_on_hover'] == 'yes') ? 'true' : 'false';
         $infinite = ($style['carousel_infinite'] == 'yes') ? 'true' : 'false';
-        $adaptiveheight = ($style['carousel_adaptive_height'] == 'yes') ? 'true' : 'false';
-        $center_mode = ($style['carousel_center_mode'] == 'yes') ? 'true' : 'false';
-
-        $arrows = ($style['carousel_show_arrows'] == 'yes') ? 'true' : 'false';
-        $dots = ($style['carousel_show_dots'] == 'yes') ? 'true' : 'false';
+        $touch = ($style['carousel_touch'] == 'yes') ? 'true' : 'false';
+        $click = ($style['carousel_click'] == 'yes') ? 'true' : 'false';
+        $arrows = ($style['carousel_show_arrows'] == 'yes') ? 'custom' : '';
 
         $jquery = '(function ($) {
-            $(".' . $this->WRAPPER . ' .oxi-addons-row").slick({
-                fade: false,
+            var flipContainer = $(".' . $this->WRAPPER . ' .oxi-addons-row"),
+            flipItem = flipContainer.find(".oxi-image-hover-style");
+            $(flipItem).each(function() { 
+                var NewElement = $("<li />");
+                $.each(this.attributes, function(i, attrib){
+                    $(NewElement).attr(attrib.name, attrib.value);
+                });
+                $(this).replaceWith(function () {
+                    return $(NewElement).append($(this).contents());
+                });
+            
+            });
+            $(flipContainer).flipster({
+                style: "' . $effect . '",
+                start: "' . $start . '",
+                fadeIn: ' . $fadein . ',
+                loop: ' . $infinite . ',
                 autoplay: ' . $autoplay . ',
-                autoplaySpeed: ' . $autoplayspeed . ',
-                speed: ' . $speed . ',
-                infinite: ' . $infinite . ',
                 pauseOnHover: ' . $pause_on_hover . ',
-                adaptiveHeight: ' . $adaptiveheight . ',
-                arrows: ' . $arrows . ',
-                prevArrow: \'<div class="oxi_carousel_arrows oxi_carousel_prev">' . $prev . '</div>\',
-                nextArrow: \'<div class="oxi_carousel_arrows oxi_carousel_next">' . $next . '</div>\',
-                dots: ' . $dots . ',
-                dotsClass: "oxi_carousel_dots",
-                slidesToShow: ' . $lap . ',
-                slidesToScroll:  ' . $lap_item . ',
-                centerMode: ' . $center_mode . ', 
-                rtl: false, 
-                responsive: [
-                    {
-                        breakpoint: 991,
-                        settings: {
-                        slidesToShow:  ' . $tab . ',
-                        slidesToScroll:  ' . $tab_item . '
-                        }
-                    },
-                    {
-                        breakpoint: 768,
-                        settings: {
-                        slidesToShow:  ' . $mobile . ',
-                        slidesToScroll:  ' . $mobile_item . '
-                        }
-                    }
-                ]
+                spacing: 0,
+                click: ' . $click . ',
+                scrollwheel: false,
+                tocuh: ' . $touch . ',
+                nav: false,
+                buttons: "' . $arrows . '",
+                buttonPrev: \'<div class="oxi_carousel_arrows oxi_carousel_prev">' . $prev . '</div>\',
+                buttonNext: \'<div class="oxi_carousel_arrows oxi_carousel_next">' . $next . '</div>\'
             });
         })(jQuery);';
         wp_add_inline_script($this->JSHANDLE, $jquery);

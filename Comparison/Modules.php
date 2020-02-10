@@ -14,41 +14,42 @@ class Modules extends Admin_Render
 {
 
     public function register_controls()
-    { 
+    {
         $this->start_section_header(
             'oxi-image-hover-start-tabs', [
-        'options' => [
-            'general-settings' => esc_html__('General Settings', OXI_IMAGE_HOVER_TEXTDOMAIN), 
-            'custom' => esc_html__('Custom CSS', OXI_IMAGE_HOVER_TEXTDOMAIN),
-        ]
+                'options' => [
+                    'general-settings' => esc_html__('General Settings', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                    'custom' => esc_html__('Custom CSS', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                ],
             ]
-    ); 
+        );
         $this->register_general_tabs();
-        $this->register_custom_tabs(); 
+        $this->register_custom_tabs();
     }
-    public function register_custom_tabs() {
+    public function register_custom_tabs()
+    {
         $this->start_section_tabs(
-                'oxi-image-hover-start-tabs', [
-            'condition' => [
-                'oxi-image-hover-start-tabs' => 'custom'
-            ],
-            'padding' => '10px'
-                ]
+            'oxi-image-hover-start-tabs', [
+                'condition' => [
+                    'oxi-image-hover-start-tabs' => 'custom',
+                ],
+                'padding' => '10px',
+            ]
         );
 
         $this->start_controls_section(
-                'oxi-image-hover', [
-            'label' => esc_html__('Custom CSS', OXI_IMAGE_HOVER_TEXTDOMAIN),
-            'showing' => TRUE,
-                ]
+            'oxi-image-hover', [
+                'label' => esc_html__('Custom CSS', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'showing' => true,
+            ]
         );
         $this->add_control(
-                'image-hover-custom-css', $this->style, [
-            'label' => __('', OXI_IMAGE_HOVER_TEXTDOMAIN),
-            'type' => Controls::TEXTAREA,
-            'default' => '',
-            'description' => 'Add Your Description Unless make it blank.'
-                ]
+            'image-hover-custom-css', $this->style, [
+                'label' => __('', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'type' => Controls::TEXTAREA,
+                'default' => '',
+                'description' => 'Add Your Description Unless make it blank.',
+            ]
         );
         $this->end_controls_section();
         $this->end_section_tabs();
@@ -64,12 +65,12 @@ class Modules extends Admin_Render
             ]
         );
         $this->start_section_devider();
-        $this->register_general_style(); 
+        $this->register_general_style();
         $this->end_section_devider();
-        $this->start_section_devider(); 
-        $this->register_image_settings(); 
-        $this->register_handle_settings();  
-        $this->register_button_settings();  
+        $this->start_section_devider();
+        $this->register_image_settings();
+        $this->register_handle_settings();
+        $this->register_button_settings();
         $this->end_section_devider();
         $this->end_section_tabs();
     }
@@ -84,16 +85,16 @@ class Modules extends Admin_Render
                 'label' => esc_html__('General Style', OXI_IMAGE_HOVER_TEXTDOMAIN),
                 'showing' => true,
             ]
-        ); 
+        );
         $this->add_group_control(
-            'oxi_image_magnifier_column', $this->style, [
+            'oxi-image-hover-col', $this->style, [
                 'type' => Controls::COLUMN,
                 'selector' => [
                     '{{WRAPPER}} .oxi-addons-main-wrapper-image-comparison' => '',
                 ],
             ]
         );
- 
+
         $this->add_group_control(
             'oxi_image_magnifier_button_border',
             $this->style,
@@ -209,7 +210,7 @@ class Modules extends Admin_Render
                     ],
                 ],
                 'selector' => [
-                    '{{WRAPPER}} .oxi_addons__image_comparison_wrapper' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .oxi-addons-main-wrapper-image-comparison' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -294,14 +295,14 @@ class Modules extends Admin_Render
                     ],
                 ],
                 'selector' => [
-                    '{{WRAPPER}} .oxi-addons-main-wrapper-image-comparison .oxi-addons-main.oxi__image_width' => 'max-width: {{SIZE}}{{UNIT}};', 
+                    '{{WRAPPER}} .oxi-addons-main-wrapper-image-comparison .oxi-addons-main.oxi__image_width' => 'max-width: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
-        
+
         $this->end_controls_section();
     }
- 
+
     /*
      * @return void
      * Start Module Method for Magnifi Setting #Light-box
@@ -312,7 +313,7 @@ class Modules extends Admin_Render
             'shortcode-addons',
             [
                 'label' => esc_html__('Handle Setting', OXI_IMAGE_HOVER_TEXTDOMAIN),
-                'showing' => TRUE,
+                'showing' => true,
             ]
         );
         $this->add_control(
@@ -329,13 +330,13 @@ class Modules extends Admin_Render
                     '{{WRAPPER}} .oxi-addons-main-wrapper-image-comparison .twentytwenty-left-arrow' => 'border-right-color: {{VALUE}};',
                     '{{WRAPPER}} .oxi-addons-main-wrapper-image-comparison .twentytwenty-right-arrow' => 'border-left-color: {{VALUE}};',
                     '{{WRAPPER}} .oxi-addons-main-wrapper-image-comparison .twentytwenty-horizontal .twentytwenty-handle::before, {{WRAPPER}} .oxi-addons-main-wrapper-image-comparison .twentytwenty-horizontal .twentytwenty-handle::after, {{WRAPPER}} .oxi-addons-main-wrapper-image-comparison .twentytwenty-vertical .twentytwenty-handle::before, {{WRAPPER}} .oxi-addons-main-wrapper-image-comparison .twentytwenty-vertical .twentytwenty-handle::after' => 'background: {{VALUE}};',
-                ]
+                ],
             ]
         );
-         $this->end_controls_section();
+        $this->end_controls_section();
 
     }
-        /*
+    /*
      * @return void
      * Start Module Method for Magnifi Setting #Light-box
      */
@@ -345,7 +346,7 @@ class Modules extends Admin_Render
             'shortcode-addons',
             [
                 'label' => esc_html__('Overlay Settings', OXI_IMAGE_HOVER_TEXTDOMAIN),
-                'showing' => FALSE,
+                'showing' => false,
             ]
         );
         $this->add_control(
@@ -355,7 +356,7 @@ class Modules extends Admin_Render
                 'label' => __('Overlay', OXI_IMAGE_HOVER_TEXTDOMAIN),
                 'type' => Controls::CHOOSE,
                 'default' => 'true',
-                'loader' => TRUE,
+                'loader' => true,
                 'options' => [
                     'true' => [
                         'title' => __('True', OXI_IMAGE_HOVER_TEXTDOMAIN),
@@ -375,8 +376,8 @@ class Modules extends Admin_Render
                 'default' => 'Before',
                 'placeholder' => 'Before',
                 'condition' => [
-                    'oxi_image_compersion_overlay_controler' => 'true'
-                ]
+                    'oxi_image_compersion_overlay_controler' => 'true',
+                ],
             ]
         );
         $this->add_control(
@@ -388,8 +389,8 @@ class Modules extends Admin_Render
                 'default' => 'after',
                 'placeholder' => 'after',
                 'condition' => [
-                    'oxi_image_compersion_overlay_controler' => 'true'
-                ]
+                    'oxi_image_compersion_overlay_controler' => 'true',
+                ],
             ]
         );
         $this->add_group_control(
@@ -397,13 +398,13 @@ class Modules extends Admin_Render
             $this->style,
             [
                 'type' => Controls::TYPOGRAPHY,
-                'separator' => TRUE,
+                'separator' => true,
                 'condition' => [
-                    'oxi_image_compersion_overlay_controler' => 'true'
+                    'oxi_image_compersion_overlay_controler' => 'true',
                 ],
                 'selector' => [
                     '{{WRAPPER}} .oxi-addons-main-wrapper-image-comparison .twentytwenty-before-label::before, {{WRAPPER}} .oxi-addons-main-wrapper-image-comparison .twentytwenty-after-label::before, {{WRAPPER}} .oxi-addons-main-wrapper-image-comparison .twentytwenty-before-label::before,  {{WRAPPER}} .oxi-addons-main-wrapper-image-comparison .twentytwenty-after-label::before' => '',
-                ]
+                ],
             ]
         );
         $this->add_control(
@@ -414,11 +415,11 @@ class Modules extends Admin_Render
                 'type' => Controls::COLOR,
                 'default' => '#787878',
                 'condition' => [
-                    'oxi_image_compersion_overlay_controler' => 'true'
+                    'oxi_image_compersion_overlay_controler' => 'true',
                 ],
                 'selector' => [
                     '{{WRAPPER}} .oxi-addons-main-wrapper-image-comparison .twentytwenty-before-label::before, {{WRAPPER}} .oxi-addons-main-wrapper-image-comparison .twentytwenty-after-label::before, {{WRAPPER}} .oxi-addons-main-wrapper-image-comparison .twentytwenty-before-label::before,  {{WRAPPER}} .oxi-addons-main-wrapper-image-comparison .twentytwenty-after-label::before' => 'color: {{VALUE}};',
-                ]
+                ],
             ]
         );
         $this->add_control(
@@ -430,11 +431,11 @@ class Modules extends Admin_Render
                 'oparetor' => 'RGB',
                 'default' => '#fff',
                 'condition' => [
-                    'oxi_image_compersion_overlay_controler' => 'true'
+                    'oxi_image_compersion_overlay_controler' => 'true',
                 ],
                 'selector' => [
                     '{{WRAPPER}} .oxi-addons-main-wrapper-image-comparison .twentytwenty-before-label::before, {{WRAPPER}} .oxi-addons-main-wrapper-image-comparison .twentytwenty-after-label::before, {{WRAPPER}} .oxi-addons-main-wrapper-image-comparison .twentytwenty-before-label::before,  {{WRAPPER}} .oxi-addons-main-wrapper-image-comparison .twentytwenty-after-label::before' => 'background: {{VALUE}};',
-                ]
+                ],
             ]
         );
         $this->add_group_control(
@@ -443,11 +444,11 @@ class Modules extends Admin_Render
             [
                 'type' => Controls::TEXTSHADOW,
                 'condition' => [
-                    'oxi_image_compersion_overlay_controler' => 'true'
+                    'oxi_image_compersion_overlay_controler' => 'true',
                 ],
                 'selector' => [
                     '{{WRAPPER}} .oxi-addons-main-wrapper-image-comparison .twentytwenty-before-label::before, {{WRAPPER}} .oxi-addons-main-wrapper-image-comparison .twentytwenty-after-label::before, {{WRAPPER}} .oxi-addons-main-wrapper-image-comparison .twentytwenty-before-label::before,  {{WRAPPER}} .oxi-addons-main-wrapper-image-comparison .twentytwenty-after-label::before' => '',
-                ]
+                ],
             ]
         );
 
@@ -479,10 +480,10 @@ class Modules extends Admin_Render
                     ],
                 ],
                 'condition' => [
-                    'oxi_image_compersion_overlay_controler' => 'true'
+                    'oxi_image_compersion_overlay_controler' => 'true',
                 ],
                 'selector' => [
-                    '{{WRAPPER}} .oxi-addons-main-wrapper-image-comparison .twentytwenty-before-label::before, {{WRAPPER}} .oxi-addons-main-wrapper-image-comparison .twentytwenty-after-label::before, {{WRAPPER}} .oxi-addons-main-wrapper-image-comparison .twentytwenty-before-label::before,  {{WRAPPER}} .oxi-addons-main-wrapper-image-comparison .twentytwenty-after-label::before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+                    '{{WRAPPER}} .oxi-addons-main-wrapper-image-comparison .twentytwenty-before-label::before, {{WRAPPER}} .oxi-addons-main-wrapper-image-comparison .twentytwenty-after-label::before, {{WRAPPER}} .oxi-addons-main-wrapper-image-comparison .twentytwenty-before-label::before,  {{WRAPPER}} .oxi-addons-main-wrapper-image-comparison .twentytwenty-after-label::before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -514,21 +515,19 @@ class Modules extends Admin_Render
                     ],
                 ],
                 'condition' => [
-                    'oxi_image_compersion_overlay_controler' => 'true'
+                    'oxi_image_compersion_overlay_controler' => 'true',
                 ],
                 'selector' => [
-                    '{{WRAPPER}} .oxi-addons-main-wrapper-image-comparison .twentytwenty-before-label::before, {{WRAPPER}} .oxi-addons-main-wrapper-image-comparison .twentytwenty-after-label::before, {{WRAPPER}} .oxi-addons-main-wrapper-image-comparison .twentytwenty-before-label::before,  {{WRAPPER}} .oxi-addons-main-wrapper-image-comparison .twentytwenty-after-label::before' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+                    '{{WRAPPER}} .oxi-addons-main-wrapper-image-comparison .twentytwenty-before-label::before, {{WRAPPER}} .oxi-addons-main-wrapper-image-comparison .twentytwenty-after-label::before, {{WRAPPER}} .oxi-addons-main-wrapper-image-comparison .twentytwenty-before-label::before,  {{WRAPPER}} .oxi-addons-main-wrapper-image-comparison .twentytwenty-after-label::before' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
 
         $this->end_controls_section();
-        
-    }
- 
- 
 
-   /*
+    }
+
+    /*
      * @return void
      * Start Module Method for Modal Opener and Modal  #Light-box
      */
@@ -550,128 +549,126 @@ class Modules extends Admin_Render
                 </div>
                 <div class="modal-body">';
 
-       
-                $this->start_controls_tabs(
-                    'shortcode-addons-start-tabs', [
+        $this->start_controls_tabs(
+            'shortcode-addons-start-tabs', [
                 'options' => [
                     'before' => esc_html__('Before Image', OXI_IMAGE_HOVER_TEXTDOMAIN),
                     'after' => esc_html__('After Image', OXI_IMAGE_HOVER_TEXTDOMAIN),
-                ]
-                    ]
-            );
-            $this->start_controls_tab();
-            $this->add_group_control(
-                'oxi_image_comparison_image_one',
-                $this->style,
-                [
-                    'label' => __('URL', OXI_IMAGE_HOVER_TEXTDOMAIN),
-                    'type' => Controls::MEDIA,
-                    'default' => [
-                        'type' => 'media-library',
-                        'link' => 'https://www.shortcode-addons.com/wp-content/uploads/2020/01/placeholder.png',
-                    ]
-                ]
-            );
-            $this->end_controls_tab();
-            $this->start_controls_tab();
-            $this->add_group_control(
-                'oxi_image_comparison_image_two',
-                $this->style,
-                [
-                    'label' => __('URL', OXI_IMAGE_HOVER_TEXTDOMAIN),
-                    'type' => Controls::MEDIA,
-                    'default' => [
-                        'type' => 'media-library',
-                        'link' => 'https://www.shortcode-addons.com/wp-content/uploads/2020/01/placeholder.png',
-                    ]
-                ]
-            );
-            $this->end_controls_tab();
-            $this->end_controls_tabs();
-          
-            $this->add_control(
-                'oxi_image_comparison_body_offset',
-                $this->style,
-                [
-                    'label' => __('Coparison Offset', OXI_IMAGE_HOVER_TEXTDOMAIN),
-                    'type' => Controls::SLIDER, 
-                    'default' => [
-                        'unit' => 'px',
-                        'size' => '0.5',
+                ],
+            ]
+        );
+        $this->start_controls_tab();
+        $this->add_group_control(
+            'oxi_image_comparison_image_one',
+            $this->style,
+            [
+                'label' => __('URL', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'type' => Controls::MEDIA,
+                'default' => [
+                    'type' => 'media-library',
+                    'link' => 'https://www.shortcode-addons.com/wp-content/uploads/2020/01/placeholder.png',
+                ],
+            ]
+        );
+        $this->end_controls_tab();
+        $this->start_controls_tab();
+        $this->add_group_control(
+            'oxi_image_comparison_image_two',
+            $this->style,
+            [
+                'label' => __('URL', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'type' => Controls::MEDIA,
+                'default' => [
+                    'type' => 'media-library',
+                    'link' => 'https://www.shortcode-addons.com/wp-content/uploads/2020/01/placeholder.png',
+                ],
+            ]
+        );
+        $this->end_controls_tab();
+        $this->end_controls_tabs();
+
+        $this->add_control(
+            'oxi_image_comparison_body_offset',
+            $this->style,
+            [
+                'label' => __('Coparison Offset', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'type' => Controls::SLIDER,
+                'default' => [
+                    'unit' => 'px',
+                    'size' => '0.5',
+                ],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 1,
+                        'step' => 0.1,
                     ],
-                    'range' => [ 
-                        'px' => [
-                            'min' => 0,
-                            'max' => 1,
-                            'step' => 0.1,
-                        ],
-                    ]
-                ]
-            );
-            $this->add_control(
-                'oxi_image_comparison_click',
-                $this->style,
-                [
-                    'label' => __('Click To Move', OXI_IMAGE_HOVER_TEXTDOMAIN),
-                    'type' => Controls::CHOOSE,
-                    'default' => 'false',
-                    'loader' => TRUE,
-                    'options' => [
-                        'true' => [
-                            'title' => __('True', OXI_IMAGE_HOVER_TEXTDOMAIN),
-                        ],
-                        'false' => [
-                            'title' => __('False', OXI_IMAGE_HOVER_TEXTDOMAIN),
-                        ],
+                ],
+            ]
+        );
+        $this->add_control(
+            'oxi_image_comparison_click',
+            $this->style,
+            [
+                'label' => __('Click To Move', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'type' => Controls::CHOOSE,
+                'default' => 'false',
+                'loader' => true,
+                'options' => [
+                    'true' => [
+                        'title' => __('True', OXI_IMAGE_HOVER_TEXTDOMAIN),
                     ],
-                    'selector' => [
-                        '{{WRAPPER}} .oxi-addons-align-btn1' => 'text-align:{{VALUE}};'
+                    'false' => [
+                        'title' => __('False', OXI_IMAGE_HOVER_TEXTDOMAIN),
                     ],
-                ]
-            );
-            $this->add_control(
-                'oxi_image_comparison_position',
-                $this->style,
-                [
-                    'label' => __('Position', OXI_IMAGE_HOVER_TEXTDOMAIN),
-                    'type' => Controls::CHOOSE,
-                    'default' => 'true',
-                    'loader' => TRUE,
-                    'descrption' => 'After Save then Refresh page!',
-                    'options' => [
-                        'true' => [
-                            'title' => __('Horizontal', OXI_IMAGE_HOVER_TEXTDOMAIN),
-                        ],
-                        'false ' => [
-                            'title' => __('Vertical ', OXI_IMAGE_HOVER_TEXTDOMAIN),
-                        ],
+                ],
+                'selector' => [
+                    '{{WRAPPER}} .oxi-addons-align-btn1' => 'text-align:{{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_control(
+            'oxi_image_comparison_position',
+            $this->style,
+            [
+                'label' => __('Position', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'type' => Controls::CHOOSE,
+                'default' => 'true',
+                'loader' => true,
+                'descrption' => 'After Save then Refresh page!',
+                'options' => [
+                    'true' => [
+                        'title' => __('Horizontal', OXI_IMAGE_HOVER_TEXTDOMAIN),
                     ],
-    
-                ]
-            );
-            $this->add_control(
-                'oxi_image_comparison_hover',
-                $this->style,
-                [
-                    'label' => __('Hover To Move', OXI_IMAGE_HOVER_TEXTDOMAIN),
-                    'type' => Controls::CHOOSE,
-                    'default' => 'false',
-                    'loader' => TRUE,
-                    'options' => [
-                        'true' => [
-                            'title' => __('True', OXI_IMAGE_HOVER_TEXTDOMAIN),
-                        ],
-                        'false' => [
-                            'title' => __('False', OXI_IMAGE_HOVER_TEXTDOMAIN),
-                        ],
+                    'false ' => [
+                        'title' => __('Vertical ', OXI_IMAGE_HOVER_TEXTDOMAIN),
                     ],
-                    'selector' => [
-                        '{{WRAPPER}} .oxi-addons-align-btn1' => 'text-align:{{VALUE}};'
+                ],
+
+            ]
+        );
+        $this->add_control(
+            'oxi_image_comparison_hover',
+            $this->style,
+            [
+                'label' => __('Hover To Move', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'type' => Controls::CHOOSE,
+                'default' => 'false',
+                'loader' => true,
+                'options' => [
+                    'true' => [
+                        'title' => __('True', OXI_IMAGE_HOVER_TEXTDOMAIN),
                     ],
-                ]
-            );
+                    'false' => [
+                        'title' => __('False', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                    ],
+                ],
+                'selector' => [
+                    '{{WRAPPER}} .oxi-addons-align-btn1' => 'text-align:{{VALUE}};',
+                ],
+            ]
+        );
         echo '</div>';
-    } 
- 
+    }
 
 }

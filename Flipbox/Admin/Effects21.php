@@ -199,36 +199,7 @@ class Effects21 extends Modules {
         );
 
 
-        $this->add_responsive_control(
-                'oxi-image-flip-front-number-size', $this->style, [
-            'label' => __('Number Size', OXI_IMAGE_HOVER_TEXTDOMAIN),
-            'type' => Controls::SLIDER,
-            'default' => [
-                'unit' => 'px',
-                'size' => 20,
-            ],
-            'range' => [
-                'px' => [
-                    'min' => 0,
-                    'max' => 500,
-                    'step' => 1,
-                ],
-                '%' => [
-                    'min' => 0,
-                    'max' => 100,
-                    'step' => 1,
-                ],
-                'em' => [
-                    'min' => 0,
-                    'max' => 100,
-                    'step' => .1,
-                ],
-            ],
-            'selector' => [
-                '{{WRAPPER}} .oxi-image-hover-figure-front-section .oxi-image-hover-number' => 'font-size:{{SIZE}}{{UNIT}};',
-            ],
-                ]
-        );
+       
         $this->add_responsive_control(
                 'oxi-image-flip-front-number-width', $this->style, [
             'label' => __('Height & Width', OXI_IMAGE_HOVER_TEXTDOMAIN),
@@ -257,6 +228,15 @@ class Effects21 extends Modules {
             'selector' => [
                 '{{WRAPPER}}  .oxi-image-hover-figure-front-section .oxi-image-hover-number' => 'width:{{SIZE}}{{UNIT}}; height:{{SIZE}}{{UNIT}};',
             ],
+                ]
+        );
+        $this->add_group_control(
+                'oxi-image-flip-front-number-typho', $this->style, [
+            'type' => Controls::TYPOGRAPHY,
+            'include' => Controls::ALIGNNORMAL,
+            'selector' => [
+                '{{WRAPPER}} .oxi-image-hover-figure-front-section .oxi-image-hover-number' => '',
+            ]
                 ]
         );
         $this->add_control(

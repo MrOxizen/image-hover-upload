@@ -7,528 +7,879 @@ namespace OXI_IMAGE_HOVER_UPLOADS\Carousel;
  *
  * @author biplo
  */
+
 use OXI_IMAGE_HOVER_PLUGINS\Classes\Controls as Controls;
 use OXI_IMAGE_HOVER_PLUGINS\Page\Admin_Render as Admin_Render;
 
-class Modules extends Admin_Render {
+class Modules extends Admin_Render
+{
 
-    public function register_controls() {
+    public function register_controls()
+    {
         $this->start_section_header(
-                'oxi-image-hover-start-tabs', [
-            'options' => [
-                'general-settings' => esc_html__('General Settings', OXI_IMAGE_HOVER_TEXTDOMAIN),
-                'custom' => esc_html__('Custom CSS', OXI_IMAGE_HOVER_TEXTDOMAIN),
-            ]
+            'oxi-image-hover-start-tabs',
+            [
+                'options' => [
+                    'general-settings' => esc_html__('General Settings', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                    'custom' => esc_html__('Custom CSS', OXI_IMAGE_HOVER_TEXTDOMAIN),
                 ]
+            ]
         );
         $this->register_general_tabs();
         $this->register_custom_tabs();
     }
 
-    public function register_custom_tabs() {
+    public function register_custom_tabs()
+    {
         $this->start_section_tabs(
-                'oxi-image-hover-start-tabs', [
-            'condition' => [
-                'oxi-image-hover-start-tabs' => 'custom'
-            ],
-            'padding' => '10px'
-                ]
+            'oxi-image-hover-start-tabs',
+            [
+                'condition' => [
+                    'oxi-image-hover-start-tabs' => 'custom'
+                ],
+                'padding' => '10px'
+            ]
         );
 
         $this->start_controls_section(
-                'oxi-image-hover', [
-            'label' => esc_html__('Custom CSS', OXI_IMAGE_HOVER_TEXTDOMAIN),
-            'showing' => TRUE,
-                ]
+            'oxi-image-hover',
+            [
+                'label' => esc_html__('Custom CSS', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'showing' => TRUE,
+            ]
         );
         $this->add_control(
-                'image-hover-custom-css', $this->style, [
-            'label' => __('', OXI_IMAGE_HOVER_TEXTDOMAIN),
-            'type' => Controls::TEXTAREA,
-            'default' => '',
-            'description' => 'Add Your Custom CSS Unless make it blank.'
-                ]
+            'image-hover-custom-css',
+            $this->style,
+            [
+                'label' => __('', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'type' => Controls::TEXTAREA,
+                'default' => '',
+                'description' => 'Add Your Custom CSS Unless make it blank.'
+            ]
         );
         $this->end_controls_section();
         $this->end_section_tabs();
     }
 
-    public function register_general_tabs() {
+    public function register_general_tabs()
+    {
         $this->start_section_tabs(
-                'oxi-image-hover-start-tabs', [
-            'condition' => [
-                'oxi-image-hover-start-tabs' => 'general-settings',
-            ],
-                ]
+            'oxi-image-hover-start-tabs',
+            [
+                'condition' => [
+                    'oxi-image-hover-start-tabs' => 'general-settings',
+                ],
+            ]
         );
         $this->start_section_devider();
 
         $this->register_carousel_query_settings();
         $this->end_section_devider();
         $this->start_section_devider();
-
+        $this->register_carousel_arrows_settings();
+        $this->register_carousel_dots_settings();
         $this->end_section_devider();
         $this->end_section_tabs();
     }
 
-    
 
-    public function register_carousel_query_settings() {
+
+    public function register_carousel_query_settings()
+    {
         $this->start_controls_section(
-                'display-post',
-                [
-                    'label' => esc_html__('Carousel Query', OXI_IMAGE_HOVER_TEXTDOMAIN),
-                    'showing' => TRUE,
-                ]
+            'display-post',
+            [
+                'label' => esc_html__('Carousel Query', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'showing' => TRUE,
+            ]
         );
         $this->add_control(
-                'carousel_register_style',
-                $this->style,
-                [
-                    'label' => __('Post Style', OXI_IMAGE_HOVER_TEXTDOMAIN),
-                    'loader' => TRUE,
-                    'type' => Controls::SELECT,
-                    'options' => $this->all_style(),
-                    'description' => 'Confirm Your Shortcode name which one you wanna create carousel.'
-                ]
+            'carousel_note',
+            $this->style,
+            [
+                'label' => __('Note', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'type' => Controls::HEADING,
+                'description' => 'Works after saving and reloading all the fields '
+            ]
         );
+        $this->add_control(
+            'carousel_register_style',
+            $this->style,
+            [
+                'label' => __('Carousel Style', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'loader' => TRUE,
+                'type' => Controls::SELECT,
+                'options' => $this->all_style(),
+                'description' => 'Confirm Your Shortcode name which one you wanna create carousel.'
+            ]
+        );
+        $this->add_responsive_control(
+            'carousel_item_slide',
+            $this->style,
+            [
+                'label' => __('Item To Slide', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'type' => Controls::SLIDER,
+                'separator' => TRUE,
+                'default' => [
+                    'unit' => 'px',
+                    'size' => '1',
+                ],
+                'range' => [
+                    'px' => [
+                        'min' => 1,
+                        'max' => 10,
+                        'step' => 1,
+                    ],
+                ],
+            ]
+        );
+        $this->add_control(
+            'carousel_autoplay',
+            $this->style,
+            [
+                'label' => __('Autoplay', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'type' => Controls::SWITCHER,
+                'loader' => TRUE,
+                'default' => 'yes',
+                'yes' => __('Yes', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'no' => __('No', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'return_value' => 'yes',
+            ]
+        );
+        $this->add_control(
+            'carousel_autoplay_speed',
+            $this->style,
+            [
+                'label' => __('Autoplay Speed', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'type' => Controls::NUMBER,
+                'default' => 2000,
+                'condition' => [
+                    'carousel_autoplay' => 'yes',
+                ],
+            ]
+        );
+        $this->add_control(
+            'carousel_speed',
+            $this->style,
+            [
+                'label' => __('Animation Speed', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'type' => Controls::NUMBER,
+                'default' => 500,
+            ]
+        );
+        $this->add_control(
+            'carousel_pause_on_hover',
+            $this->style,
+            [
+                'label' => __('Pause on Hover', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'type' => Controls::SWITCHER,
+                'loader' => TRUE,
+                'default' => 'yes',
+                'yes' => __('Yes', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'no' => __('No', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'return_value' => 'yes',
+            ]
+        );
+        $this->add_control(
+            'carousel_infinite',
+            $this->style,
+            [
+                'label' => __('Infinite Loop', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'type' => Controls::SWITCHER,
+                'loader' => TRUE,
+                'default' => 'yes',
+                'yes' => __('Yes', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'no' => __('No', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'return_value' => 'yes',
+            ]
+        );
+        $this->add_control(
+            'carousel_adaptive_height',
+            $this->style,
+            [
+                'label' => __('Adaptive Height', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'type' => Controls::SWITCHER,
+                'loader' => TRUE,
+                'default' => 'yes',
+                'yes' => __('Yes', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'no' => __('No', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'return_value' => 'yes',
+            ]
+        );
+        $this->add_control(
+            'carousel_center_mode',
+            $this->style,
+            [
+                'label' => __('Center Mode', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'type' => Controls::SWITCHER,
+                'loader' => TRUE,
+                'default' => 'no',
+                'yes' => __('Yes', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'no' => __('No', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'return_value' => 'yes',
+            ]
+        );
+        $this->add_control(
+            'carousel_show_arrows',
+            $this->style,
+            [
+                'label' => __('Arrows', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'type' => Controls::SWITCHER,
+                'loader' => TRUE,
+                'default' => 'yes',
+                'yes' => __('Yes', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'no' => __('No', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'return_value' => 'yes',
+
+            ]
+        );
+        $this->add_control(
+            'carousel_show_dots',
+            $this->style,
+            [
+                'label' => __('Dots', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'type' => Controls::SWITCHER,
+                'loader' => TRUE,
+                'default' => 'no',
+                'yes' => __('Yes', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'no' => __('No', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'return_value' => 'yes',
+            ]
+        );
+
         $this->end_controls_section();
     }
 
-    public function all_style() {
-        $alldata = $this->wpdb->get_results("SELECT * FROM  $this->parent_table ORDER BY id DESC", ARRAY_A);
+    public function all_style()
+    {
+        $b = 'button%';
+        $g = 'general%';
+        $s = 'square%';
+        $c = 'caption%';
+        $alldata = $this->wpdb->get_results($this->wpdb->prepare("SELECT id, name FROM $this->parent_table WHERE style_name LIKE %s OR style_name LIKE %s OR style_name LIKE %s OR style_name LIKE %s ORDER by id ASC", $b,$c, $g, $s), ARRAY_A);
         $st = [];
         foreach ($alldata as $k => $value) {
             $st[$value['id']] = $value['name'] != '' ? $value['name'] : 'Shortcode ID ' . $value['id'];
         }
+
         return $st;
     }
 
-    
 
-    public function register_post_condition_settings() {
+
+    public function register_carousel_arrows_settings()
+    {
         $this->start_controls_section(
-                'display-post',
-                [
-                    'label' => esc_html__('Post Condition', OXI_IMAGE_HOVER_TEXTDOMAIN),
-                    'showing' => TRUE,
-                ]
-        );
-
-        $this->add_control(
-                'display_post_per_page',
-                $this->style,
-                [
-                    'label' => __('Post Per Page', OXI_IMAGE_HOVER_TEXTDOMAIN),
-                    'type' => Controls::NUMBER,
-                    'loader' => TRUE,
-                    'min' => 1,
-                ]
-        );
-        $this->add_control(
-                'display_post_excerpt',
-                $this->style,
-                [
-                    'label' => __('Excerpt Word Limit', OXI_IMAGE_HOVER_TEXTDOMAIN),
-                    'type' => Controls::NUMBER,
-                    'loader' => TRUE,
-                    'min' => 1,
-                ]
-        );
-        $this->add_control(
-                'display_post_offset',
-                $this->style,
-                [
-                    'label' => __('Offset', OXI_IMAGE_HOVER_TEXTDOMAIN),
-                    'type' => Controls::NUMBER,
-                    'loader' => TRUE,
-                ]
-        );
-        $this->add_control(
-                'display_post_orderby',
-                $this->style,
-                [
-                    'label' => __(' Order By', OXI_IMAGE_HOVER_TEXTDOMAIN),
-                    'type' => Controls::SELECT,
-                    'default' => 'ID',
-                    'loader' => TRUE,
-                    'options' => [
-                        'ID' => 'Post ID',
-                        'author' => 'Post Author',
-                        'title' => 'Title',
-                        'date' => 'Date',
-                        'modified' => 'Last Modified Date',
-                        'parent' => 'Parent Id',
-                        'rand' => 'Random',
-                        'comment_count' => 'Comment Count',
-                        'menu_order' => 'Menu Order',
-                    ],
-                ]
-        );
-
-        $this->add_control(
-                'display_post_ordertype',
-                $this->style,
-                [
-                    'label' => __(' Order Type', OXI_IMAGE_HOVER_TEXTDOMAIN),
-                    'type' => Controls::SELECT,
-                    'loader' => TRUE,
-                    'options' => [
-                        'asc' => 'Ascending',
-                        'desc' => 'Descending',
-                    ],
-                ]
-        );
-        $this->add_control(
-                'display_post_thumb_sizes',
-                $this->style,
-                [
-                    'label' => __('Image Size', OXI_IMAGE_HOVER_TEXTDOMAIN),
-                    'type' => Controls::SELECT,
-                    'loader' => TRUE,
-                    'options' => $this->thumbnail_sizes(),
-                ]
-        );
-        $this->add_control(
-                'display_post_load_more', $this->style,
-                [
-                    'label' => __('Load More', OXI_IMAGE_HOVER_TEXTDOMAIN),
-                    'type' => Controls::SWITCHER,
-                    'default' => 'no',
-                    'yes' => __('Yes', OXI_IMAGE_HOVER_TEXTDOMAIN),
-                    'no' => __('No', OXI_IMAGE_HOVER_TEXTDOMAIN),
-                    'return_value' => 'yes',
-                ]
-        );
-        $this->add_control(
-                'display_post_load_more_type', $this->style,
-                [
-                    'label' => __('Load More Type', OXI_IMAGE_HOVER_TEXTDOMAIN),
-                    'type' => Controls::CHOOSE,
-                    'loader' => TRUE,
-                    'operator' => Controls::OPERATOR_TEXT,
-                    'default' => 'button',
-                    'options' => [
-                        'button' => [
-                            'title' => __('Button', OXI_IMAGE_HOVER_TEXTDOMAIN),
-                        ],
-                        'infinite' => [
-                            'title' => __('Infinite', OXI_IMAGE_HOVER_TEXTDOMAIN),
-                        ],
-                    ],
-                    'condition' => [
-                        'display_post_load_more' => 'yes'
-                    ]
-                ]
-        );
-        $this->end_controls_section();
-
-
-
-        $this->start_controls_section(
-                'display-post',
-                [
-                    'label' => esc_html__('Load More Button', OXI_IMAGE_HOVER_TEXTDOMAIN),
-                    'showing' => false,
-                    'condition' => [
-                        'display_post_load_more' => 'yes',
-                        'display_post_load_more_type' => 'button'
-                    ]
-                ]
-        );
-
-        $this->add_control(
-                'display_post_load_button_text', $this->style, [
-            'label' => __('Button Text', OXI_IMAGE_HOVER_TEXTDOMAIN),
-            'type' => Controls::TEXT,
-            'default' => 'Load More',
-            'placeholder' => 'Load More Button',
-            'selector' => [
-                '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button span' => '',
+            'carousel-arrow',
+            [
+                'label' => esc_html__('Carousel Arrows', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'showing' => TRUE,
+                'condition' => [
+                    'carousel_show_arrows' => 'yes',
+                ],
             ]
-                ]
         );
 
-        $this->add_control(
-                'display_post_load_button_position',
-                $this->style,
-                [
-                    'label' => __('Position', OXI_IMAGE_HOVER_TEXTDOMAIN),
-                    'type' => Controls::CHOOSE,
-                    'operator' => Controls::OPERATOR_ICON,
-                    'default' => 'left',
-                    'options' => [
-                        'left' => [
-                            'title' => __('Left', OXI_IMAGE_HOVER_TEXTDOMAIN),
-                            'icon' => 'fa fa-align-left',
-                        ],
-                        'center' => [
-                            'title' => __('Center', OXI_IMAGE_HOVER_TEXTDOMAIN),
-                            'icon' => 'fa fa-align-center',
-                        ],
-                        'right' => [
-                            'title' => __('Right', OXI_IMAGE_HOVER_TEXTDOMAIN),
-                            'icon' => 'fa fa-align-right',
-                        ],
-                    ],
-                    'selector' => [
-                        '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap' => 'text-align:{{VALUE}};',
-                    ]
-                ]
-        );
-
-        $this->add_group_control(
-                'display_post_load_button_typho', $this->style, [
-            'type' => Controls::TYPOGRAPHY,
-            'selector' => [
-                '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button' => '',
-                '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button .oxi-image-hover-loader button__loader' => '',
-                '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button span' => '',
-            ]
-                ]
-        );
         $this->start_controls_tabs(
-                'oxi-image-hover-start-tabs',
-                [
-                    'options' => [
-                        'normal' => esc_html__('Normal ', OXI_IMAGE_HOVER_TEXTDOMAIN),
-                        'hover' => esc_html__('Hover ', OXI_IMAGE_HOVER_TEXTDOMAIN),
-                    ]
+            'oxi-image-hover-start-tabs',
+            [
+                'options' => [
+                    'normal' => esc_html__('Left Arrow Icon', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                    'hover' => esc_html__('Right Arrow Icon', OXI_IMAGE_HOVER_TEXTDOMAIN),
                 ]
+            ]
         );
         $this->start_controls_tab();
         $this->add_control(
-                'display_post_load_button_color', $this->style, [
-            'label' => __('Color', OXI_IMAGE_HOVER_TEXTDOMAIN),
-            'type' => Controls::COLOR,
-            'default' => '#ffffff',
-            'selector' => [
-                '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button' => 'color: {{VALUE}};',
-                '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button .oxi-image-hover-loader button__loader' => 'color: {{VALUE}};',
-                '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button span' => 'color: {{VALUE}};',
-                '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button:hover' => 'color: {{VALUE}};',
-                '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button:hover .oxi-image-hover-loader button__loader' => 'color: {{VALUE}};',
-                '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button:hover span' => 'color: {{VALUE}};',
+            'carousel_left_arrow',
+            $this->style,
+            [
+                'label' => __('Left Arrow', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'type' => Controls::ICON,
+                'default' => 'fas fa-chevron-left',
             ]
-                ]
-        );
-        $this->add_control(
-                'display_post_load_button_background', $this->style, [
-            'label' => __('Background', OXI_IMAGE_HOVER_TEXTDOMAIN),
-            'type' => Controls::GRADIENT,
-            'default' => 'rgba(171, 0, 201, 1)',
-            'selector' => [
-                '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button' => 'background: {{VALUE}};',
-                '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button:hover' => 'background: {{VALUE}};',
-            ]
-                ]
-        );
-        $this->add_group_control(
-                'display_post_load_button_border',
-                $this->style,
-                [
-                    'type' => Controls::BORDER,
-                    'selector' => [
-                        '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button' => ''
-                    ],
-                ]
-        );
-        $this->add_group_control(
-                'display_post_load_button_tx_shadow', $this->style, [
-            'type' => Controls::TEXTSHADOW,
-            'selector' => [
-                '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button span' => '',
-            ]
-                ]
-        );
-
-        $this->add_responsive_control(
-                'display_post_load_button_radius', $this->style, [
-            'label' => __('Border Radius', OXI_IMAGE_HOVER_TEXTDOMAIN),
-            'type' => Controls::DIMENSIONS,
-            'default' => [
-                'unit' => 'px',
-                'size' => '',
-            ],
-            'range' => [
-                'px' => [
-                    'min' => 0,
-                    'max' => 500,
-                    'step' => 1,
-                ],
-                '%' => [
-                    'min' => 0,
-                    'max' => 50,
-                    'step' => 1,
-                ],
-                'em' => [
-                    'min' => 0,
-                    'max' => 100,
-                    'step' => .1,
-                ],
-            ],
-            'selector' => [
-                '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button' => 'border-radius:{{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button:hover' => 'border-radius:{{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-            ],
-                ]
-        );
-        $this->add_group_control(
-                'display_post_load_button_boxshadow', $this->style, [
-            'type' => Controls::BOXSHADOW,
-            'selector' => [
-                '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button' => '',
-                '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button:hover' => '',
-            ]
-                ]
         );
         $this->end_controls_tab();
         $this->start_controls_tab();
         $this->add_control(
-                'display_post_load_button_hover_color', $this->style, [
-            'label' => __('Color', OXI_IMAGE_HOVER_TEXTDOMAIN),
-            'type' => Controls::COLOR,
-            'default' => '#ffffff',
-            'selector' => [
-                '{{WRAPPER}} .oxi-addons-row .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button:hover' => 'color: {{VALUE}};',
-                '{{WRAPPER}} .oxi-addons-row .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button:hover .oxi-image-hover-loader button__loader' => 'color: {{VALUE}};',
-                '{{WRAPPER}} .oxi-addons-row .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button:hover span' => 'color: {{VALUE}};',
+            'carousel_right_arrow',
+            $this->style,
+            [
+                'label' => __('Right Arrow', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'type' => Controls::ICON,
+                'default' => 'fas fa-chevron-right',
             ]
-                ]
         );
-        $this->add_control(
-                'display_post_load_button_hover_background', $this->style, [
-            'label' => __('Background', OXI_IMAGE_HOVER_TEXTDOMAIN),
-            'type' => Controls::GRADIENT,
-            'default' => '#ffffff',
-            'selector' => [
-                '{{WRAPPER}} .oxi-addons-row .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button:hover' => 'background: {{VALUE}};',
-            ]
-                ]
-        );
-        $this->add_group_control(
-                'display_post_load_button_hover_border',
-                $this->style,
-                [
-                    'type' => Controls::BORDER,
-                    'selector' => [
-                        '{{WRAPPER}} .oxi-addons-row .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button:hover' => ''
-                    ],
-                ]
-        );
-        $this->add_group_control(
-                'display_post_load_button_hover_tx_shadow', $this->style, [
-            'type' => Controls::TEXTSHADOW,
-            'selector' => [
-                '{{WRAPPER}} .oxi-addons-row .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button:hover span' => '',
-            ]
-                ]
-        );
-
-        $this->add_responsive_control(
-                'display_post_load_button_hover_radius', $this->style, [
-            'label' => __('Border Radius', OXI_IMAGE_HOVER_TEXTDOMAIN),
-            'type' => Controls::DIMENSIONS,
-            'default' => [
-                'unit' => 'px',
-                'size' => '',
-            ],
-            'range' => [
-                'px' => [
-                    'min' => 0,
-                    'max' => 500,
-                    'step' => 1,
-                ],
-                '%' => [
-                    'min' => 0,
-                    'max' => 50,
-                    'step' => 1,
-                ],
-                'em' => [
-                    'min' => 0,
-                    'max' => 100,
-                    'step' => .1,
-                ],
-            ],
-            'selector' => [
-                '{{WRAPPER}} .oxi-addons-row .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button:hover' => 'border-radius:{{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-            ],
-                ]
-        );
-        $this->add_group_control(
-                'display_post_load_button_button_boxshadow', $this->style, [
-            'type' => Controls::BOXSHADOW,
-            'selector' => [
-                '{{WRAPPER}} .oxi-addons-row .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button:hover' => '',
-            ]
-                ]
-        );
-
         $this->end_controls_tab();
         $this->end_controls_tabs();
-
         $this->add_responsive_control(
-                'display_post_load_button_button_padding', $this->style, [
-            'label' => __('Padding', OXI_IMAGE_HOVER_TEXTDOMAIN),
-            'type' => Controls::DIMENSIONS,
-            'separator' => TRUE,
-            'default' => [
-                'unit' => 'px',
-                'size' => '',
-            ],
-            'range' => [
-                'px' => [
-                    'min' => 1,
-                    'max' => 500,
-                    'step' => 1,
+            'carousel_arrows_size',
+            $this->style,
+            [
+                'label' => __('Size', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'type' => Controls::SLIDER,
+                'separator' => TRUE,
+                'default' => [
+                    'unit' => 'px',
+                    'size' => '20',
                 ],
-                '%' => [
-                    'min' => 0,
-                    'max' => 100,
-                    'step' => 1,
+                'range' => [
+                    'px' => [
+                        'min' => 1,
+                        'max' => 200,
+                        'step' => 1,
+                    ],
+                    '%' => [
+                        'min' => 0,
+                        'max' => 50,
+                        'step' => 1,
+                    ],
+                    'em' => [
+                        'min' => 0,
+                        'max' => 20,
+                        'step' => .1,
+                    ],
                 ],
-                'em' => [
-                    'min' => 0,
-                    'max' => 100,
-                    'step' => .1,
-                ],
-            ],
-            'selector' => [
-                '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap .oxi-image-load-more-button' => 'padding:{{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-            ]
+                'selector' => [
+                    '{{WRAPPER}} .oxi_carousel_arrows .oxi-icons' => 'font-size:{{SIZE}}{{UNIT}}; line-height:{{SIZE}}{{UNIT}};',
                 ]
+            ]
         );
         $this->add_responsive_control(
-                'display_post_load_button_button_margin', $this->style, [
-            'label' => __('Margin', OXI_IMAGE_HOVER_TEXTDOMAIN),
-            'type' => Controls::DIMENSIONS,
-            'default' => [
-                'unit' => 'px',
-                'size' => '',
-            ],
-            'range' => [
-                'px' => [
-                    'min' => 1,
-                    'max' => 500,
-                    'step' => 1,
+            'carousel_arrows_position_x',
+            $this->style,
+            [
+                'label' => __('Position X', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'type' => Controls::SLIDER,
+                'default' => [
+                    'unit' => 'px',
+                    'size' => '25',
                 ],
-                '%' => [
-                    'min' => 0,
-                    'max' => 100,
-                    'step' => 1,
+                'range' => [
+                    'px' => [
+                        'min' => -1200,
+                        'max' => 1200,
+                        'step' => 1,
+                    ],
+                    '%' => [
+                        'min' => -100,
+                        'max' => 100,
+                        'step' => 1,
+                    ],
+                    'em' => [
+                        'min' => -100,
+                        'max' => 100,
+                        'step' => .1,
+                    ],
                 ],
-                'em' => [
-                    'min' => 0,
-                    'max' => 100,
-                    'step' => .1,
-                ],
-            ],
-            'selector' => [
-                '{{WRAPPER}} .oxi-image-hover-load-more-button-wrap' => 'padding:{{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-            ]
+                'selector' => [
+                    '{{WRAPPER}} .oxi_carousel_arrows.oxi_carousel_prev' => 'left:{{SIZE}}{{UNIT}}; right:auto;',
+                    '{{WRAPPER}} .oxi_carousel_arrows.oxi_carousel_next' => 'right:{{SIZE}}{{UNIT}}; left:auto',
                 ]
+            ]
+        );
+        $this->add_responsive_control(
+            'carousel_arrows_position_y',
+            $this->style,
+            [
+                'label' => __('Position Y', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'type' => Controls::SLIDER,
+                'default' => [
+                    'unit' => '%',
+                    'size' => '50',
+                ],
+                'range' => [
+                    'px' => [
+                        'min' => -1200,
+                        'max' => 1200,
+                        'step' => 1,
+                    ],
+                    '%' => [
+                        'min' => -100,
+                        'max' => 100,
+                        'step' => 1,
+                    ],
+                    'em' => [
+                        'min' => -100,
+                        'max' => 100,
+                        'step' => .1,
+                    ],
+                ],
+                'selector' => [
+                    '{{WRAPPER}} .oxi_carousel_arrows' => 'top:{{SIZE}}{{UNIT}}; transform: translateY(-{{SIZE}}{{UNIT}});',
+                ]
+            ]
+        );
+        $this->start_controls_tabs(
+            'oxi-image-hover-start-tabs',
+            [
+                'options' => [
+                    'normal' => esc_html__('Normal', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                    'hover' => esc_html__('Hover', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                ]
+            ]
+        );
+        $this->start_controls_tab();
+        $this->add_control(
+            'carousel_arrows_color',
+            $this->style,
+            [
+                'label' => __('Color', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'type' => Controls::COLOR,
+                'default' => '#ffffff',
+                'selector' => [
+                    '{{WRAPPER}} .oxi_carousel_arrows .oxi-icons' => 'color: {{VALUE}};',
+                ]
+            ]
+        );
+        $this->add_control(
+            'carousel_arrows_background',
+            $this->style,
+            [
+                'label' => __('Background', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'type' => Controls::GRADIENT,
+                'default' => 'rgba(171, 0, 201, 1)',
+                'selector' => [
+                    '{{WRAPPER}} .oxi_carousel_arrows .oxi-icons' => 'background: {{VALUE}};',
+                ]
+            ]
+        );
+        $this->add_group_control(
+            'carousel_arrows_border',
+            $this->style,
+            [
+                'type' => Controls::BORDER,
+                'selector' => [
+                    '{{WRAPPER}} .oxi_carousel_arrows .oxi-icons' => ''
+                ],
+            ]
+        );
+        $this->add_group_control(
+            'carousel_arrows_shadow',
+            $this->style,
+            [
+                'type' => Controls::BOXSHADOW,
+                'selector' => [
+                    '{{WRAPPER}} .oxi_carousel_arrows .oxi-icons' => '',
+                ]
+            ]
+        );
+        $this->end_controls_tab();
+        $this->start_controls_tab();
+        $this->add_control(
+            'carousel_arrows_color_hover',
+            $this->style,
+            [
+                'label' => __('Color', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'type' => Controls::COLOR,
+                'default' => '#ffffff',
+                'selector' => [
+                    '{{WRAPPER}} .oxi_carousel_arrows .oxi-icons:hover' => 'color: {{VALUE}};',
+                ]
+            ]
+        );
+        $this->add_control(
+            'carousel_arrows_background_hover',
+            $this->style,
+            [
+                'label' => __('Background', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'type' => Controls::GRADIENT,
+                'default' => 'rgba(171, 0, 201, 1)',
+                'selector' => [
+                    '{{WRAPPER}} .oxi_carousel_arrows .oxi-icons:hover' => 'background: {{VALUE}};',
+                ]
+            ]
+        );
+        $this->add_group_control(
+            'carousel_arrows_border_hover',
+            $this->style,
+            [
+                'type' => Controls::BORDER,
+                'selector' => [
+                    '{{WRAPPER}} .oxi_carousel_arrows .oxi-icons:hover' => ''
+                ],
+            ]
+        );
+        $this->add_group_control(
+            'carousel_arrows_shadow_hover',
+            $this->style,
+            [
+                'type' => Controls::BOXSHADOW,
+                'selector' => [
+                    '{{WRAPPER}} .oxi_carousel_arrows .oxi-icons:hover' => '',
+                ]
+            ]
+        );
+        $this->end_controls_tab();
+        $this->end_controls_tabs();
+        $this->add_responsive_control(
+            'carousel_arrows_radius',
+            $this->style,
+            [
+                'label' => __('Border Radius', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'type' => Controls::DIMENSIONS,
+                'separator' => TRUE,
+                'default' => [
+                    'unit' => 'px',
+                    'size' => '',
+                ],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 500,
+                        'step' => 1,
+                    ],
+                    '%' => [
+                        'min' => 0,
+                        'max' => 50,
+                        'step' => 1,
+                    ],
+                    'em' => [
+                        'min' => 0,
+                        'max' => 100,
+                        'step' => .1,
+                    ],
+                ],
+                'selector' => [
+                    '{{WRAPPER}} .oxi_carousel_arrows .oxi-icons' => 'border-radius:{{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+        $this->add_responsive_control(
+            'carousel_arrows_padding',
+            $this->style,
+            [
+                'label' => __('Padding', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                'type' => Controls::DIMENSIONS,
+                'default' => [
+                    'unit' => 'px',
+                    'size' => '10',
+                ],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 500,
+                        'step' => 1,
+                    ],
+                    '%' => [
+                        'min' => 0,
+                        'max' => 50,
+                        'step' => 1,
+                    ],
+                    'em' => [
+                        'min' => 0,
+                        'max' => 100,
+                        'step' => .1,
+                    ],
+                ],
+                'selector' => [
+                    '{{WRAPPER}} .oxi_carousel_arrows .oxi-icons' => 'padding:{{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
         );
         $this->end_controls_section();
     }
+    public function register_carousel_dots_settings()
+    {
+        $this->start_controls_section(
+            'shortcode-addons',
+            [
+                'label' => esc_html__('Carousel Dots', SHORTCODE_ADDOONS),
+                'showing' => FALSE,
+                'condition' => [
+                    'carousel_show_dots' => 'yes',
+                ],
+            ]
+        );
+        $this->add_responsive_control(
+            'carousel_dots_position_size',
+            $this->style,
+            [
+                'label' => __('Size', SHORTCODE_ADDOONS),
+                'type' => Controls::SLIDER,
+                'default' => [
+                    'unit' => 'px',
+                    'size' => '10',
+                ],
+                'range' => [
+                    'px' => [
+                        'min' => 1,
+                        'max' => 200,
+                        'step' => 1,
+                    ],
+                    '%' => [
+                        'min' => 1,
+                        'max' => 50,
+                        'step' => 1,
+                    ],
+                    'em' => [
+                        'min' => 1,
+                        'max' => 15,
+                        'step' => 1,
+                    ],
+                ],
+                'selector' => [
+                    '{{WRAPPER}} .oxi_carousel_dots li button:before' => 'font-size: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+        $this->add_responsive_control(
+            'carousel_dots_width_height',
+            $this->style,
+            [
+                'label' => __('Width & Height', SHORTCODE_ADDOONS),
+                'type' => Controls::SLIDER,
+                'default' => [
+                    'unit' => 'px',
+                    'size' => '20',
+                ],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 100,
+                        'step' => 1,
+                    ],
+                    '%' => [
+                        'min' => 0,
+                        'max' => 50,
+                        'step' => 1,
+                    ],
+                    'em' => [
+                        'min' => 0,
+                        'max' => 10,
+                        'step' => 1,
+                    ],
+                ],
+                'selector' => [
+                    '{{WRAPPER}} .oxi_carousel_dots li' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .oxi_carousel_dots li button:before' => 'line-height: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+        $this->add_responsive_control(
+            'carousel_dots_position_Y',
+            $this->style,
+            [
+                'label' => __('Position Y', SHORTCODE_ADDOONS),
+                'type' => Controls::SLIDER,
+                'default' => [
+                    'unit' => '%',
+                    'size' => '35',
+                ],
+                'range' => [
+                    'px' => [
+                        'min' => -900,
+                        'max' => 900,
+                        'step' => 1,
+                    ],
+                    '%' => [
+                        'min' => -100,
+                        'max' => 100,
+                        'step' => 1,
+                    ],
+                    'em' => [
+                        'min' => -100,
+                        'max' => 100,
+                        'step' => 1,
+                    ],
+                ],
+                'selector' => [
+                    '{{WRAPPER}} .oxi_carousel_dots' => 'bottom: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+        $this->add_responsive_control(
+            'carousel_dots_spacing',
+            $this->style,
+            [
+                'label' => __('Spacing', SHORTCODE_ADDOONS),
+                'type' => Controls::SLIDER,
+                'default' => [
+                    'unit' => 'px',
+                    'size' => '3',
+                ],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 100,
+                        'step' => 1,
+                    ],
+                    '%' => [
+                        'min' => 0,
+                        'max' => 30,
+                        'step' => 1,
+                    ],
+                    'em' => [
+                        'min' => 0,
+                        'max' => 5,
+                        'step' => 1,
+                    ],
+                ],
+                'selector' => [
+                    '{{WRAPPER}} .oxi_carousel_dots li' => 'margin: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+        $this->start_controls_tabs(
+            'shortcode-addons-start-tabs',
+            [
+                'options' => [
+                    'normal' => esc_html__('Normal', SHORTCODE_ADDOONS),
+                    'hover' => esc_html__('Hover', SHORTCODE_ADDOONS),
+                    'active' => esc_html__('Active', SHORTCODE_ADDOONS),
+                ]
+            ]
+        );
+        $this->start_controls_tab();
+        $this->add_control(
+            'carousel_dots_color',
+            $this->style,
+            [
+                'label' => __('Color', SHORTCODE_ADDOONS),
+                'type' => Controls::COLOR,
+                'default' => '#fff',
+                'oparetor' => 'RGB',
+                'selector' => [
+                    '{{WRAPPER}} .oxi_carousel_dots li button:before' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_control(
+            'carousel_dots_bg_color',
+            $this->style,
+            [
+                'label' => __('Background', SHORTCODE_ADDOONS),
+                'type' => Controls::COLOR,
+                'default' => 'rgb(0, 0, 0)',
+                'oparetor' => 'RGB',
+                'selector' => [
+                    '{{WRAPPER}} .oxi_carousel_dots li button:before' => 'background: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_group_control(
+            'carousel_dots_border',
+            $this->style,
+            [
+                'type' => Controls::BORDER,
+                'selector' => [
+                    '{{WRAPPER}} .oxi_carousel_dots li button:before' => '',
+                ]
+            ]
+        );
+        $this->end_controls_tab();
 
+        $this->start_controls_tab();
+        $this->add_control(
+            'carousel_dots_color_hover',
+            $this->style,
+            [
+                'label' => __('Color', SHORTCODE_ADDOONS),
+                'type' => Controls::COLOR,
+                'default' => 'rgb(119, 119, 119)',
+                'oparetor' => 'RGB',
+                'selector' => [
+                    '{{WRAPPER}} .oxi_carousel_dots li:hover button:before' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_control(
+            'carousel_dots_bg_color_hover',
+            $this->style,
+            [
+                'label' => __('Background', SHORTCODE_ADDOONS),
+                'type' => Controls::COLOR,
+                'default' => 'rgb(119, 119, 119)',
+                'oparetor' => 'RGB',
+                'selector' => [
+                    '{{WRAPPER}} .oxi_carousel_dots li:hover button:before' => 'background: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_group_control(
+            'carousel_dots_border_hover',
+            $this->style,
+            [
+                'type' => Controls::BORDER,
+                'selector' => [
+                    '{{WRAPPER}} .oxi_carousel_dots li:hover button:before' => '',
+                ]
+            ]
+        );
+        $this->end_controls_tab();
+        $this->start_controls_tab();
+        $this->add_control(
+            'carousel_dots_color_active',
+            $this->style,
+            [
+                'label' => __('Color', SHORTCODE_ADDOONS),
+                'type' => Controls::COLOR,
+                'default' => '#fff',
+                'oparetor' => 'RGB',
+                'selector' => [
+                    '{{WRAPPER}} .oxi_carousel_dots li.slick-active button:before' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_control(
+            'carousel_dots_bg_color_active',
+            $this->style,
+            [
+                'label' => __('Background', SHORTCODE_ADDOONS),
+                'type' => Controls::COLOR,
+                'default' => '#AB00C9',
+                'oparetor' => 'RGB',
+                'selector' => [
+                    '{{WRAPPER}} .oxi_carousel_dots li.slick-active button:before' => 'background: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_group_control(
+            'carousel_dots_border_active',
+            $this->style,
+            [
+                'type' => Controls::BORDER,
+                'selector' => [
+                    '{{WRAPPER}} .oxi_carousel_dots li.slick-active button:before' => '',
+                ]
+            ]
+        );
+        $this->end_controls_tab();
+        $this->end_controls_tabs();
+        $this->add_responsive_control(
+            'carousel_dots_border_radius_normal',
+            $this->style,
+            [
+                'label' => __('Border Radius', SHORTCODE_ADDOONS),
+                'type' => Controls::DIMENSIONS,
+                'separator' => TRUE,
+                'default' => [
+                    'unit' => 'px',
+                    'size' => '',
+                ],
+                'range' => [
+                    '%' => [
+                        'min' => 0,
+                        'max' => 50,
+                        'step' => .1,
+                    ],
+                    'px' => [
+                        'min' => 0,
+                        'max' => 200,
+                        'step' => 1,
+                    ],
+                    'em' => [
+                        'min' => 0,
+                        'max' => 10,
+                        'step' => .1,
+                    ],
+                ],
+                'selector' => [
+                    '{{WRAPPER}} .oxi_carousel_dots li button:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+        $this->end_controls_section();
+    }
 }

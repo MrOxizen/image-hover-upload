@@ -1,16 +1,16 @@
-.image-hover-filter-style-1 {
+.image-hover-filter-style-2 {
     width: 100%;
     float: left;
     padding: 10px 10px 10px 10px
 }
 
-.image-hover-filter-style-1 .image-hover-category-menu {
+.image-hover-filter-style-2 .image-hover-category-menu {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 }
-.image-hover-filter-style-1 .image-hover-category-menu-item {
+.image-hover-filter-style-2 .image-hover-category-menu-item {
     display: inline-block;
     cursor: pointer;
     font-size: 18px;
@@ -28,15 +28,15 @@
     box-shadow: 0px 0px 0px 0px rgba(138, 138, 138, 1)
 }
 
-.image-hover-filter-style-1 .image-hover-category-menu-item:hover,
-.image-hover-filter-style-1 .image-hover-category-menu-item.oxi-active {
+.image-hover-filter-style-2 .image-hover-category-menu-item:hover,
+.image-hover-filter-style-2 .image-hover-category-menu-item.oxi-active {
     color: #ffffff;
     background: rgba(71, 201, 229, 1.00);
     box-shadow: 0px 10px 25px 0px rgba(69, 200, 230, 0.55)
 }
 
-.image-hover-filter-style-1 .image-hover-category,
-.image-hover-filter-style-1 .image-hover-category-data{
+.image-hover-filter-style-2 .image-hover-category,
+.image-hover-filter-style-2 .image-hover-category-data{
     width: 100%;
     float: left;
 }

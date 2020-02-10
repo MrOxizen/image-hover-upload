@@ -106,7 +106,7 @@ class Modules extends Admin_Render
             ]
         );
         $this->add_group_control(
-            'oxi_image_light_box_column',
+            'oxi-image-hover-col',
             $this->style,
             [
                 'type' => Controls::COLUMN,

@@ -8,7 +8,7 @@ if (!defined('ABSPATH')) {
 
 use OXI_IMAGE_HOVER_PLUGINS\Page\Public_Render;
 
-class Effects1 extends Public_Render {
+class Effects2 extends Public_Render {
 
     public function public_jquery() {
         wp_enqueue_script('imagesloaded.pkgd.min', OXI_IMAGE_HOVER_UPLOAD_URL . '/Filter/Files/imagesloaded.pkgd.min.js', false, SA_ADDONS_PLUGIN_VERSION);
@@ -17,8 +17,58 @@ class Effects1 extends Public_Render {
     }
 
     public function public_css() {
-        wp_enqueue_style('oxi-image-hover-filter-style-1', OXI_IMAGE_HOVER_UPLOAD_URL . '/Filter/Files/style-1.css', false, OXI_IMAGE_HOVER_PLUGIN_VERSION);
+        wp_enqueue_style('oxi-image-hover-filter-style-2', OXI_IMAGE_HOVER_UPLOAD_URL . '/Filter/Files/style-2.css', false, OXI_IMAGE_HOVER_PLUGIN_VERSION);
     }
+    
+      public function inline_public_css() {
+        $styledata = $this->style;
+        $item_width = '.' . $this->WRAPPER . ' .image-hover-category-item-show {
+                        width: ' . (100 / explode('-', $styledata['category_col-lap'])[4]) . '%;
+                    }
+                    .' . $this->WRAPPER . ' .image-hover-category-item-show.grid_item_width_2-lap {
+                        width: ' . ((100 / explode('-', $styledata['category_col-lap'])[4]) * 2) . '%;
+                    }
+                    .' . $this->WRAPPER . ' .image-hover-category-item-show.grid_item_width_3-lap {
+                        width: ' . ((100 / explode('-', $styledata['category_col-lap'])[4]) * 3) . '%;
+                    }
+                    .' . $this->WRAPPER . ' .image-hover-category-item-show.grid_item_width_4-lap {
+                        width: ' . ((100 / explode('-', $styledata['category_col-lap'])[4]) * 4) . '%;
+                    }
+                    .' . $this->WRAPPER . ' .image-hover-category-item-show {
+                        max-width: 100%;
+                    }
+                @media only screen and (min-width : 669px) and (max-width : 993px){
+                    .' . $this->WRAPPER . ' .image-hover-category-item-show {
+                        width: ' . (100 / explode('-', $styledata['category_col-tab'])[4]) . '%;
+                    }
+                    .' . $this->WRAPPER . ' .image-hover-category-item-show.grid_item_width_2-tab {
+                        width: ' . ((100 / explode('-', $styledata['category_col-tab'])[4]) * 2) . '%;
+                    }
+                    .' . $this->WRAPPER . ' .image-hover-category-item-show.grid_item_width_3-tab {
+                        width: ' . ((100 / explode('-', $styledata['category_col-tab'])[4]) * 3) . '%;
+                    }
+                    .' . $this->WRAPPER . ' .image-hover-category-item-show.grid_item_width_4-tab {
+                        width: ' . ((100 / explode('-', $styledata['category_col-tab'])[4]) * 4) . '%;
+                    }
+                }
+                @media only screen and (max-width : 668px){
+                    .' . $this->WRAPPER . ' .image-hover-category-item-show {
+                        width: ' . (100 / explode('-', $styledata['category_col-mob'])[4]) . '%;
+                    }
+                    .' . $this->WRAPPER . ' .image-hover-category-item-show.grid_item_width_2-mob {
+                        width: ' . ((100 / explode('-', $styledata['category_col-mob'])[4]) * 2) . '%;
+                    }
+                    .' . $this->WRAPPER . ' .image-hover-category-item-show.grid_item_width_3-mob {
+                        width: ' . ((100 / explode('-', $styledata['category_col-mob'])[4]) * 3) . '%;
+                    }
+                    .' . $this->WRAPPER . ' .image-hover-category-item-show.grid_item_width_4-mob {
+                        width: ' . ((100 / explode('-', $styledata['category_col-mob'])[4]) * 4) . '%;
+                    }
+                }
+                ';
+        return $item_width;
+    }
+    
 
     public function inline_public_jquery() {
         $jquery = '';
@@ -64,7 +114,7 @@ class Effects1 extends Public_Render {
         endif;
 
 
-        echo '  <div class="image-hover-filter-style image-hover-filter-style-1">
+        echo '  <div class="image-hover-filter-style image-hover-filter-style-2">
                     <div class="image-hover-category-menu image-hover-category-menu-' . $oxiid . ' ">';
         foreach ($all_cat_data as $value) :
             if ($active_default == $value['category_item_text']) :
@@ -90,7 +140,7 @@ class Effects1 extends Public_Render {
             foreach ($select_cat_data as $item) :
                 $item_cat_list .= $this->CatStringToClassReplacce($item, $oxiid) . ' ';
             endforeach;
-            echo '<div class="image-hover-category-item-show  ' . $item_cat_list . '  ' . $this->column_render('category_col', $styledata)  . ($admin == "admin" ? '  oxi-addons-admin-edit-list' : '') . '">
+            echo '<div class="image-hover-category-item-show  ' . $item_cat_list . ' ' . $childdata['category_item_col-lap'] . '-lap' . ' ' . $childdata['category_item_col-tab'] . '-tab' . ' ' . $childdata['category_item_col-mob'] . '-mob' . ' ' . ($admin == "admin" ? '  oxi-addons-admin-edit-list' : '') . '">
                             ' . $this->text_render($childdata['image_hover_info']);
             if ($admin == 'admin'):
                 echo '      <div class="oxi-addons-admin-absulote">

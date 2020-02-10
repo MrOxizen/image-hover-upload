@@ -476,6 +476,7 @@ class Effects22 extends Modules {
                 . '{{WRAPPER}} .oxi-image-hover-figure:hover .oxi-image-hover-figure-front-section img, '
                 . '{{WRAPPER}} .oxi-image-hover-figure.oxi-touch .oxi-image-hover-figure-front-section img, '
                 . '{{WRAPPER}} .oxi-image-hover-figure:hover .oxi-image-hover-figure-backend, '
+                . '{{WRAPPER}} .oxi-image-hover-figure:hover .oxi-image-hover-figure-backend-section-body,  '
                 . '{{WRAPPER}} .oxi-image-hover-figure.oxi-touch .oxi-image-hover-figure-backend, '
                 . '{{WRAPPER}} .oxi-image-hover-figure:hover .oxi-image-hover-figure-backend:before, '
                 . '{{WRAPPER}} .oxi-image-hover-figure.oxi-touch .oxi-image-hover-figure-backend:before, '

@@ -201,24 +201,24 @@ class Effects17 extends Modules {
                 ],
             ],
             'selector' => [
-                '{{WRAPPER}} .oxi-image-hover-figure-frontend:hover, '
-                . '{{WRAPPER}} .oxi-image-hover-figure-frontend.oxi-touch, '
-                . '{{WRAPPER}} .oxi-image-hover-figure-frontend:hover:before, '
-                . '{{WRAPPER}} .oxi-image-hover-figure-frontend.oxi-touch:before, '
-                . '{{WRAPPER}} .oxi-image-hover-figure-frontend:hover:after, '
-                . '{{WRAPPER}} .oxi-image-hover-figure-frontend.oxi-touch:after, '
-                . '{{WRAPPER}} .oxi-image-hover-figure-front-section:hover, '
-                . '{{WRAPPER}} .oxi-image-hover-figure-front-section.oxi-touch, '
-                . '{{WRAPPER}} .oxi-image-hover-figure-front-section:hover img, '
-                . '{{WRAPPER}} .oxi-image-hover-figure-front-section.oxi-touch img, '
-                . '{{WRAPPER}} .oxi-image-hover-figure-backend:hover, '
-                . '{{WRAPPER}} .oxi-image-hover-figure-backend.oxi-touch, '
-                . '{{WRAPPER}} .oxi-image-hover-figure-backend:hover:before, '
-                . '{{WRAPPER}} .oxi-image-hover-figure-backend.oxi-touch:before, '
-                . '{{WRAPPER}} .oxi-image-hover-figure-backend:hover:after, '
-                . '{{WRAPPER}} .oxi-image-hover-figure-backend.oxi-touch:after, '
-                . '{{WRAPPER}} .oxi-image-hover-figure-back-section:hover, '
-                . '{{WRAPPER}} .oxi-image-hover-figure-back-section.oxi-touch ' => 'border-radius:{{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                '{{WRAPPER}} .oxi-image-hover-figure:hover .oxi-image-hover-figure-frontend, '
+                . '{{WRAPPER}} .oxi-image-hover-figure.oxi-touch .oxi-image-hover-figure-frontend, '
+                . '{{WRAPPER}} .oxi-image-hover-figure:hover .oxi-image-hover-figure-frontend:before, '
+                . '{{WRAPPER}} .oxi-image-hover-figure.oxi-touch .oxi-image-hover-figure-frontend:before, '
+                . '{{WRAPPER}} .oxi-image-hover-figure:hover .oxi-image-hover-figure-frontend:after, '
+                . '{{WRAPPER}} .oxi-image-hover-figure.oxi-touch .oxi-image-hover-figure-frontend:after, '
+                . '{{WRAPPER}} .oxi-image-hover-figure:hover .oxi-image-hover-figure-front-section, '
+                . '{{WRAPPER}} .oxi-image-hover-figure:hover .oxi-image-hover-figure-front-section, '
+                . '{{WRAPPER}} .oxi-image-hover-figure:hover .oxi-image-hover-figure-front-section img, '
+                . '{{WRAPPER}} .oxi-image-hover-figure.oxi-touch .oxi-image-hover-figure-front-section img, '
+                . '{{WRAPPER}} .oxi-image-hover-figure:hover .oxi-image-hover-figure-backend, '
+                . '{{WRAPPER}} .oxi-image-hover-figure.oxi-touch .oxi-image-hover-figure-backend, '
+                . '{{WRAPPER}} .oxi-image-hover-figure:hover .oxi-image-hover-figure-backend:before, '
+                . '{{WRAPPER}} .oxi-image-hover-figure.oxi-touch .oxi-image-hover-figure-backend:before, '
+                . '{{WRAPPER}} .oxi-image-hover-figure:hover .oxi-image-hover-figure-backend:after, '
+                . '{{WRAPPER}} .oxi-image-hover-figure.oxi-touch .oxi-image-hover-figure-backend:after, '
+                . '{{WRAPPER}} .oxi-image-hover-figure:hover .oxi-image-hover-figure-back-section, '
+                . '{{WRAPPER}} .oxi-image-hover-figure.oxi-touch .oxi-image-hover-figure-back-section ' => 'border-radius:{{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
                 ]
         );

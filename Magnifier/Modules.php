@@ -60,7 +60,7 @@ class Modules extends Admin_Render
             ]
         ); 
         $this->add_group_control(
-            'oxi_image_magnifier_column', $this->style, [
+            'oxi-image-hover-col', $this->style, [
                 'type' => Controls::COLUMN,
                 'selector' => [
                     '{{WRAPPER}} .oxi_addons__image_magnifier_column' => '',
@@ -183,7 +183,7 @@ class Modules extends Admin_Render
                     ],
                 ],
                 'selector' => [
-                    '{{WRAPPER}} .oxi_addons__image_magnifier_wrapper' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .oxi_addons__image_magnifier_column' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
