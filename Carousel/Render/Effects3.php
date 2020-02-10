@@ -8,23 +8,19 @@ if (!defined('ABSPATH')) {
 
 use OXI_IMAGE_HOVER_PLUGINS\Page\Public_Render;
 
-class Effects3 extends Public_Render
-{
+class Effects3 extends Public_Render {
 
-    public function public_jquery()
-    {
+    public function public_jquery() {
         wp_enqueue_script('oxi-image-carousel-swiper.min.js', OXI_IMAGE_HOVER_UPLOAD_URL . 'Carousel/Files/swiper.min.js', false, OXI_IMAGE_HOVER_PLUGIN_VERSION);
         $this->JSHANDLE = 'oxi-image-carousel-swiper.min.js';
     }
 
-    public function public_css()
-    {
+    public function public_css() {
         wp_enqueue_style('oxi-image-hover-carousel-swiper.min.css', OXI_IMAGE_HOVER_UPLOAD_URL . '/Carousel/Files/swiper.min.css', false, OXI_IMAGE_HOVER_PLUGIN_VERSION);
         wp_enqueue_style('oxi-image-hover-style-3', OXI_IMAGE_HOVER_UPLOAD_URL . '/Carousel/Files/style-3.css', false, OXI_IMAGE_HOVER_PLUGIN_VERSION);
     }
 
-    public function render()
-    {
+    public function render() {
         $arrow = '';
         $style = $this->style;
         $prev = $this->font_awesome_render($style['carousel_left_arrow']);
@@ -59,8 +55,7 @@ class Effects3 extends Public_Render
               </div>';
     }
 
-    public function public_column_render($col)
-    {
+    public function public_column_render($col) {
         $column = 1;
         if (count(explode('-lg-', $col)) == 2) :
             $column = explode('-lg-', $col)[1];
@@ -84,16 +79,16 @@ class Effects3 extends Public_Render
         endif;
     }
 
-    public function default_render($style, $child, $admin)
-    {
-        if (!array_key_exists('carousel_register_style', $style)) :
+    public function default_render($style, $child, $admin) {
+        if (!array_key_exists('carousel_register_style', $style) && $style['carousel_register_style'] < 1) :
             echo '<p>Kindly Select Image Effects Frist to Extend Carousel.</p>';
             return;
         endif;
         $styledata = $this->wpdb->get_row($this->wpdb->prepare('SELECT * FROM ' . $this->parent_table . ' WHERE id = %d ', $style['carousel_register_style']), ARRAY_A);
 
         if (!is_array($styledata)) :
-            echo '<p> Style Data not found. Kindly Check CArousel & Slider <a href="https://www.image-hover.oxilab.org/docs/hover-extension/display-post/">Documentation</a>.</p>';
+            echo '<p> Style Data not found. Kindly Check Carousel & Slider <a href="https://www.image-hover.oxilab.org/docs/hover-extension/carousel-slider/">Documentation</a>.</p>';
+            return;
         endif;
         $files = $this->wpdb->get_results($this->wpdb->prepare("SELECT * FROM $this->child_table WHERE styleid = %d", $style['carousel_register_style']), ARRAY_A);
         $StyleName = explode('-', ucfirst($styledata['style_name']));
@@ -195,4 +190,5 @@ class Effects3 extends Public_Render
         })(jQuery);';
         wp_add_inline_script($this->JSHANDLE, $jquery);
     }
+
 }
