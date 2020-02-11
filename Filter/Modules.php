@@ -561,13 +561,14 @@ class Modules extends Admin_Render {
                 [
                     'label' => __('Item Per Rows', OXI_IMAGE_HOVER_TEXTDOMAIN),
                     'type' => Controls::COLUMN,
+                    'loader' => TRUE,
                     'selector' => [
                         '{{WRAPPER}} .image-hover-category-item-show' => '',
                     ],
                 ]
         );
         $this->add_responsive_control(
-                'sa_category_data_item',
+                'category_data_item',
                 $this->style,
                 [
                     'label' => __('Item Padding', OXI_IMAGE_HOVER_TEXTDOMAIN),
