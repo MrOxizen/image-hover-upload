@@ -27,12 +27,12 @@
     -moz-perspective: 900px;
     perspective: 900px;
 }
-.oxi-image-general-hover-style-11 .oxi-image-hover-figure:hover .oxi-image-hover-image,
-.oxi-image-general-hover-style-11 .oxi-image-hover-figure.oxi-touch .oxi-image-hover-image{
+.oxi-image-general-hover-style-11.oxi-image-hover:hover .oxi-image-hover-figure .oxi-image-hover-image,
+.oxi-image-general-hover-style-11.oxi-image-hover.oxi-touch .oxi-image-hover-figure .oxi-image-hover-image{
     opacity: 0;
 }
-.oxi-image-general-hover-style-11 .oxi-image-hover-figure:hover .oxi-image-hover-figure-caption,
-.oxi-image-general-hover-style-11 .oxi-image-hover-figure.oxi-touch .oxi-image-hover-figure-caption{
+.oxi-image-general-hover-style-11.oxi-image-hover:hover .oxi-image-hover-figure .oxi-image-hover-figure-caption,
+.oxi-image-general-hover-style-11.oxi-image-hover.oxi-touch .oxi-image-hover-figure .oxi-image-hover-figure-caption{
     visibility: visible;
     opacity: 1;
 }
@@ -51,8 +51,8 @@
     -o-transform: translateZ(-1000px) rotateY(-90deg);
     transform: translateZ(-1000px) rotateY(-90deg);
 }
-.oxi-image-general-hover-style-11 .oxi-image-hover-figure.left_to_right:hover .oxi-image-hover-figure-caption,
-.oxi-image-general-hover-style-11 .oxi-image-hover-figure.left_to_right.oxi-touch .oxi-image-hover-figure-caption{
+.oxi-image-general-hover-style-11.oxi-image-hover:hover .oxi-image-hover-figure.left_to_right .oxi-image-hover-figure-caption,
+.oxi-image-general-hover-style-11.oxi-image-hover.oxi-touch .oxi-image-hover-figure.left_to_right .oxi-image-hover-figure-caption{
     -webkit-transform: translateZ(0) rotateY(0);
     -moz-transform: translateZ(0) rotateY(0);
     -ms-transform: translateZ(0) rotateY(0);
@@ -60,8 +60,8 @@
     transform: translateZ(0) rotateY(0);
 }
 
-.oxi-image-general-hover-style-11 .oxi-image-hover-figure.left_to_right:hover .oxi-image-hover-image,
-.oxi-image-general-hover-style-11 .oxi-image-hover-figure.left_to_right.oxi-touch .oxi-image-hover-image{
+.oxi-image-general-hover-style-11.oxi-image-hover:hover .oxi-image-hover-figure.left_to_right .oxi-image-hover-image,
+.oxi-image-general-hover-style-11.oxi-image-hover.oxi-touch .oxi-image-hover-figure.left_to_right .oxi-image-hover-image{
     -webkit-transform: translateZ(-1000px) rotateY(90deg);
     -moz-transform: translateZ(-1000px) rotateY(90deg);
     -ms-transform: translateZ(-1000px) rotateY(90deg);
@@ -82,16 +82,16 @@
     -o-transform: translateZ(-1000px) rotateY(90deg);
     transform: translateZ(-1000px) rotateY(90deg);
 }
-.oxi-image-general-hover-style-11 .oxi-image-hover-figure.right_to_left:hover .oxi-image-hover-image,
-.oxi-image-general-hover-style-11 .oxi-image-hover-figure.right_to_left.oxi-touch .oxi-image-hover-image{
+.oxi-image-general-hover-style-11.oxi-image-hover:hover .oxi-image-hover-figure.right_to_left .oxi-image-hover-image,
+.oxi-image-general-hover-style-11.oxi-image-hover.oxi-touch .oxi-image-hover-figure.right_to_left .oxi-image-hover-image{
     -webkit-transform: translateZ(-1000px) rotateY(-90deg);
     -moz-transform: translateZ(-1000px) rotateY(-90deg);
     -ms-transform: translateZ(-1000px) rotateY(-90deg);
     -o-transform: translateZ(-1000px) rotateY(-90deg);
     transform: translateZ(-1000px) rotateY(-90deg);
 }
-.oxi-image-general-hover-style-11 .oxi-image-hover-figure.right_to_left:hover .oxi-image-hover-figure-caption,
-.oxi-image-general-hover-style-11 .oxi-image-hover-figure.right_to_left.oxi-touch .oxi-image-hover-figure-caption{
+.oxi-image-general-hover-style-11.oxi-image-hover:hover .oxi-image-hover-figure.right_to_left .oxi-image-hover-figure-caption,
+.oxi-image-general-hover-style-11.oxi-image-hover.oxi-touch .oxi-image-hover-figure.right_to_left .oxi-image-hover-figure-caption{
     -webkit-transform: translateZ(0) rotateY(0);
     -moz-transform: translateZ(0) rotateY(0);
     -ms-transform: translateZ(0) rotateY(0);
@@ -113,16 +113,16 @@
     -o-transform: translateZ(-1000px) rotateX(90deg);
     transform: translateZ(-1000px) rotateX(90deg);
 }
-.oxi-image-general-hover-style-11 .oxi-image-hover-figure.top_to_bottom:hover .oxi-image-hover-image,
-.oxi-image-general-hover-style-11 .oxi-image-hover-figure.top_to_bottom.oxi-touch .oxi-image-hover-image{
+.oxi-image-general-hover-style-11.oxi-image-hover:hover .oxi-image-hover-figure.top_to_bottom .oxi-image-hover-image,
+.oxi-image-general-hover-style-11.oxi-image-hover.oxi-touch .oxi-image-hover-figure.top_to_bottom .oxi-image-hover-image{
     -webkit-transform: translateZ(-1000px) rotateX(-90deg);
     -moz-transform: translateZ(-1000px) rotateX(-90deg);
     -ms-transform: translateZ(-1000px) rotateX(-90deg);
     -o-transform: translateZ(-1000px) rotateX(-90deg);
     transform: translateZ(-1000px) rotateX(-90deg);
 }
-.oxi-image-general-hover-style-11 .oxi-image-hover-figure.top_to_bottom:hover .oxi-image-hover-figure-caption,
-.oxi-image-general-hover-style-11 .oxi-image-hover-figure.top_to_bottom.oxi-touch .oxi-image-hover-figure-caption{
+.oxi-image-general-hover-style-11.oxi-image-hover:hover .oxi-image-hover-figure.top_to_bottom .oxi-image-hover-figure-caption,
+.oxi-image-general-hover-style-11.oxi-image-hover.oxi-touch .oxi-image-hover-figure.top_to_bottom .oxi-image-hover-figure-caption{
     -webkit-transform: translateZ(0) rotateX(0);
     -moz-transform: translateZ(0) rotateX(0);
     -ms-transform: translateZ(0) rotateX(0);
@@ -144,16 +144,16 @@
     -o-transform: translateZ(-1000px) rotateX(-90deg);
     transform: translateZ(-1000px) rotateX(-90deg);
 }
-.oxi-image-general-hover-style-11 .oxi-image-hover-figure.bottom_to_top:hover .oxi-image-hover-image,
-.oxi-image-general-hover-style-11 .oxi-image-hover-figure.bottom_to_top.oxi-touch .oxi-image-hover-image{
+.oxi-image-general-hover-style-11.oxi-image-hover:hover .oxi-image-hover-figure.bottom_to_top .oxi-image-hover-image,
+.oxi-image-general-hover-style-11.oxi-image-hover.oxi-touch .oxi-image-hover-figure.bottom_to_top .oxi-image-hover-image{
     -webkit-transform: translateZ(-1000px) rotateX(90deg);
     -moz-transform: translateZ(-1000px) rotateX(90deg);
     -ms-transform: translateZ(-1000px) rotateX(90deg);
     -o-transform: translateZ(-1000px) rotateX(90deg);
     transform: translateZ(-1000px) rotateX(90deg);
 }
-.oxi-image-general-hover-style-11 .oxi-image-hover-figure.bottom_to_top:hover .oxi-image-hover-figure-caption,
-.oxi-image-general-hover-style-11 .oxi-image-hover-figure.bottom_to_top.oxi-touch .oxi-image-hover-figure-caption{
+.oxi-image-general-hover-style-11.oxi-image-hover:hover .oxi-image-hover-figure.bottom_to_top .oxi-image-hover-figure-caption,
+.oxi-image-general-hover-style-11.oxi-image-hover.oxi-touch .oxi-image-hover-figure.bottom_to_top .oxi-image-hover-figure-caption{
     -webkit-transform: translateZ(0) rotateX(0);
     -moz-transform: translateZ(0) rotateX(0);
     -ms-transform: translateZ(0) rotateX(0);

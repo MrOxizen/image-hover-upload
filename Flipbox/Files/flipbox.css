@@ -151,84 +151,84 @@
     justify-content: center;
     text-align: center
 }
-.oxi-image-hover-figure:hover .oxi-image-hover-figure-frontend,
-.oxi-image-hover-figure.active .oxi-image-hover-figure-frontend{
+.oxi-image-hover:hover .oxi-image-hover-figure .oxi-image-hover-figure-frontend,
+.oxi-image-hover.oxi-touch .oxi-image-hover-figure .oxi-image-hover-figure-frontend{
     z-index: -1;
 }
-.oxi-image-hover-figure:hover .oxi-image-hover-figure-backend,
-.oxi-image-hover-figure.active .oxi-image-hover-figure-backend{
+.oxi-image-hover:hover .oxi-image-hover-figure .oxi-image-hover-figure-backend,
+.oxi-image-hover.oxi-touch .oxi-image-hover-figure .oxi-image-hover-figure-backend{
     z-index: 1;
 }
-.oxi-image-flip-bottom-to-top .oxi-image-hover-figure-frontend {
+.oxi-image-hover .oxi-image-flip-bottom-to-top .oxi-image-hover-figure-frontend {
     -webkit-transform: rotateX(0deg);
     transform: rotateX(0deg);
 }
-.oxi-image-flip-bottom-to-top .oxi-image-hover-figure-backend {
+.oxi-image-hover .oxi-image-flip-bottom-to-top .oxi-image-hover-figure-backend {
     -webkit-transform: rotateX(-180deg);
     transform: rotateX(-180deg);
 }
-.oxi-image-flip-bottom-to-top.active .oxi-image-hover-figure-frontend,
-.oxi-image-flip-bottom-to-top:hover .oxi-image-hover-figure-frontend{
+.oxi-image-hover:hover .oxi-image-flip-bottom-to-top .oxi-image-hover-figure-frontend,
+.oxi-image-hover.oxi-touch .oxi-image-flip-bottom-to-top .oxi-image-hover-figure-frontend{
     -webkit-transform: rotateX(180deg);
     transform: rotateX(180deg);
 }
-.oxi-image-flip-bottom-to-top.active .oxi-image-hover-figure-backend,
-.oxi-image-flip-bottom-to-top:hover .oxi-image-hover-figure-backend {
+.oxi-image-hover:hover .oxi-image-flip-bottom-to-top .oxi-image-hover-figure-backend,
+.oxi-image-hover.oxi-touch .oxi-image-flip-bottom-to-top .oxi-image-hover-figure-backend {
     -webkit-transform: rotateX(0deg);
     transform: rotateX(0deg);
 }
-.oxi-image-flip-left-to-right .oxi-image-hover-figure-frontend {
+.oxi-image-hover .oxi-image-flip-left-to-right .oxi-image-hover-figure-frontend {
     -webkit-transform: rotateY(0deg);
     transform: rotateY(0deg);
 }
-.oxi-image-flip-left-to-right .oxi-image-hover-figure-backend {
+.oxi-image-hover .oxi-image-flip-left-to-right .oxi-image-hover-figure-backend {
     -webkit-transform: rotateY(-180deg);
     transform: rotateY(-180deg);
 }
-.oxi-image-flip-left-to-right.active .oxi-image-hover-figure-frontend,
-.oxi-image-flip-left-to-right:hover .oxi-image-hover-figure-frontend{
+.oxi-image-hover:hover .oxi-image-flip-left-to-right .oxi-image-hover-figure-frontend,
+.oxi-image-hover.oxi-touch  .oxi-image-flip-left-to-right .oxi-image-hover-figure-frontend{
     -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
 }
-.oxi-image-flip-left-to-right.active .oxi-image-hover-figure-backend,
-.oxi-image-flip-left-to-right:hover .oxi-image-hover-figure-backend{
+.oxi-image-hover:hover .oxi-image-flip-left-to-right .oxi-image-hover-figure-backend,
+.oxi-image-hover.oxi-touch .oxi-image-flip-left-to-right .oxi-image-hover-figure-backend{
     -webkit-transform: rotateY(0deg);
     transform: rotateY(0deg);
 }
-.oxi-image-flip-right-to-left .oxi-image-hover-figure-frontend {
+.oxi-image-hover .oxi-image-flip-right-to-left .oxi-image-hover-figure-frontend {
     -webkit-transform: rotateY(0deg);
     transform: rotateY(0deg);
 }
-.oxi-image-flip-right-to-left .oxi-image-hover-figure-backend {
+.oxi-image-hover .oxi-image-flip-right-to-left .oxi-image-hover-figure-backend {
     -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
 }
-.oxi-image-flip-right-to-left.active .oxi-image-hover-figure-frontend,
-.oxi-image-flip-right-to-left:hover .oxi-image-hover-figure-frontend{
+.oxi-image-hover:hover .oxi-image-flip-right-to-left .oxi-image-hover-figure-frontend,
+.oxi-image-hover.oxi-touch .oxi-image-flip-right-to-left .oxi-image-hover-figure-frontend{
     -webkit-transform: rotateY(-180deg);
     transform: rotateY(-180deg);
 }
-.oxi-image-flip-right-to-left.active .oxi-image-hover-figure-backend,
-.oxi-image-flip-right-to-left:hover .oxi-image-hover-figure-backend{
+.oxi-image-hover:hover .oxi-image-flip-right-to-left .oxi-image-hover-figure-backend,
+.oxi-image-hover.oxi-touch .oxi-image-flip-right-to-left .oxi-image-hover-figure-backend{
     -webkit-transform: rotateY(0deg);
     transform: rotateY(0deg);
 }
 
-.oxi-image-flip-top-to-bottom .oxi-image-hover-figure-frontend {
+.oxi-image-hover .oxi-image-flip-top-to-bottom .oxi-image-hover-figure-frontend {
     -webkit-transform: rotateX(0deg);
     transform: rotateX(0deg);
 }
-.oxi-image-flip-top-to-bottom .oxi-image-hover-figure-backend {
+.oxi-image-hover .oxi-image-flip-top-to-bottom .oxi-image-hover-figure-backend {
     -webkit-transform: rotateX(180deg);
     transform: rotateX(180deg);
 }
-.oxi-image-flip-top-to-bottom.active .oxi-image-hover-figure-frontend,
-.oxi-image-flip-top-to-bottom:hover .oxi-image-hover-figure-frontend{
+.oxi-image-hover:hover .oxi-image-flip-top-to-bottom .oxi-image-hover-figure-frontend,
+.oxi-image-hover.oxi-touch .oxi-image-flip-top-to-bottom .oxi-image-hover-figure-frontend{
     -webkit-transform: rotateX(-180deg);
     transform: rotateX(-180deg);
 }
-.oxi-image-flip-top-to-bottom.active .oxi-image-hover-figure-backend,
-.oxi-image-flip-top-to-bottom:hover .oxi-image-hover-figure-backend {
+.oxi-image-hover:hover .oxi-image-flip-top-to-bottom .oxi-image-hover-figure-backend,
+.oxi-image-hover.oxi-touch .oxi-image-flip-top-to-bottom .oxi-image-hover-figure-backend {
     -webkit-transform: rotateX(0deg);
     transform: rotateX(0deg);
 }
