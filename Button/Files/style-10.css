@@ -4,8 +4,8 @@
     pointer-events: none;
     overflow: hidden;
 }
-.oxi-image-button-hover-style-10 .oxi-image-hover-figure.oxi-touch .oxi-image-hover-figure-caption,
-.oxi-image-button-hover-style-10 .oxi-image-hover-figure:hover .oxi-image-hover-figure-caption{
+.oxi-image-button-hover-style-10.oxi-image-hover.oxi-touch .oxi-image-hover-figure-caption,
+.oxi-image-button-hover-style-10.oxi-image-hover:hover .oxi-image-hover-figure-caption{
     visibility: visible;
     opacity: 1;
     pointer-events: auto;
@@ -45,10 +45,10 @@
 .oxi-image-button-hover-style-10 .oxi-image-hover-figure.left_to_right .overlayB{
     transform: translateY(100%);
 }
-.oxi-image-button-hover-style-10 .oxi-image-hover-figure.left_to_right:hover .overlayT,
-.oxi-image-button-hover-style-10 .oxi-image-hover-figure.left_to_right.oxi-touch .overlayT,
-.oxi-image-button-hover-style-10 .oxi-image-hover-figure.left_to_right:hover .overlayB,
-.oxi-image-button-hover-style-10 .oxi-image-hover-figure.left_to_right.oxi-touch .overlayB{
+.oxi-image-button-hover-style-10.oxi-image-hover:hover .oxi-image-hover-figure.left_to_right:hover .overlayT,
+.oxi-image-button-hover-style-10.oxi-image-hover.oxi-touch .oxi-image-hover-figure.left_to_right .overlayT,
+.oxi-image-button-hover-style-10.oxi-image-hover:hover .oxi-image-hover-figure.left_to_right .overlayB,
+.oxi-image-button-hover-style-10.oxi-image-hover.oxi-touch .oxi-image-hover-figure.left_to_right .overlayB{
    transform: translateY(0);
 }
 .oxi-image-button-hover-style-10 .oxi-image-hover-figure.right_to_left .overlayT,
@@ -59,10 +59,10 @@
 .oxi-image-button-hover-style-10 .oxi-image-hover-figure.right_to_left .overlayB{
     transform: translateX(100%);
 }
-.oxi-image-button-hover-style-10 .oxi-image-hover-figure.right_to_left:hover .overlayT,
-.oxi-image-button-hover-style-10 .oxi-image-hover-figure.right_to_left.oxi-touch .overlayT,
-.oxi-image-button-hover-style-10 .oxi-image-hover-figure.right_to_left:hover .overlayB,
-.oxi-image-button-hover-style-10 .oxi-image-hover-figure.right_to_left.oxi-touch .overlayB{
+.oxi-image-button-hover-style-10.oxi-image-hover:hover .oxi-image-hover-figure.right_to_left .overlayT,
+.oxi-image-button-hover-style-10.oxi-image-hover.oxi-touch .oxi-image-hover-figure.right_to_left .overlayT,
+.oxi-image-button-hover-style-10.oxi-image-hover:hover .oxi-image-hover-figure.right_to_left .overlayB,
+.oxi-image-button-hover-style-10.oxi-image-hover.oxi-touch .oxi-image-hover-figure.right_to_left .overlayB{
    transform: translateX(0);
 }
 
@@ -87,10 +87,10 @@
 .oxi-image-button-hover-style-10 .oxi-image-hover-figure.top_to_bottom .overlayB{
     transform: translateY(100%);
 }
-.oxi-image-button-hover-style-10 .oxi-image-hover-figure.top_to_bottom:hover .overlayT,
-.oxi-image-button-hover-style-10 .oxi-image-hover-figure.top_to_bottom.oxi-touch .overlayT,
-.oxi-image-button-hover-style-10 .oxi-image-hover-figure.top_to_bottom:hover .overlayB,
-.oxi-image-button-hover-style-10 .oxi-image-hover-figure.top_to_bottom.oxi-touch .overlayB{
+.oxi-image-button-hover-style-10.oxi-image-hover .oxi-image-hover-figure.top_to_bottom .overlayT,
+.oxi-image-button-hover-style-10.oxi-image-hover.oxi-touch .oxi-image-hover-figure.top_to_bottom .overlayT,
+.oxi-image-button-hover-style-10.oxi-image-hover:hover  .oxi-image-hover-figure.top_to_bottom .overlayB,
+.oxi-image-button-hover-style-10.oxi-image-hover.oxi-touch  .oxi-image-hover-figure.top_to_bottom .overlayB{
    transform: translateY(0);
 }
 
@@ -117,9 +117,9 @@
 .oxi-image-button-hover-style-10 .oxi-image-hover-figure.bottom_to_top .overlayB{
     transform: translateX(100%);
 }
-.oxi-image-button-hover-style-10 .oxi-image-hover-figure.bottom_to_top:hover .overlayT,
-.oxi-image-button-hover-style-10 .oxi-image-hover-figure.bottom_to_top.oxi-touch .overlayT,
-.oxi-image-button-hover-style-10 .oxi-image-hover-figure.bottom_to_top:hover .overlayB,
-.oxi-image-button-hover-style-10 .oxi-image-hover-figure.bottom_to_top.oxi-touch .overlayB{
+.oxi-image-button-hover-style-10.oxi-image-hover:hover .oxi-image-hover-figure.bottom_to_top .overlayT,
+.oxi-image-button-hover-style-10.oxi-image-hover.oxi-touch .oxi-image-hover-figure.bottom_to_top .overlayT,
+.oxi-image-button-hover-style-10.oxi-image-hover:hover .oxi-image-hover-figure.bottom_to_top .overlayB,
+.oxi-image-button-hover-style-10.oxi-image-hover.oxi-touch .oxi-image-hover-figure.bottom_to_top .overlayB{
    transform: translateX(0);
 }
