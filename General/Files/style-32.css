@@ -17,12 +17,12 @@
 .oxi-image-general-hover-style-32 .oxi-image-hover-figure .oxi-image-hover-figure-caption {
     opacity: 0;
 }
-.oxi-image-general-hover-style-32 .oxi-image-hover-figure:hover .oxi-image-hover-figure-caption,
-.oxi-image-general-hover-style-32 .oxi-image-hover-figure.oxi-touch .oxi-image-hover-figure-caption{
+.oxi-image-general-hover-style-32.oxi-image-hover:hover .oxi-image-hover-figure .oxi-image-hover-figure-caption,
+.oxi-image-general-hover-style-32.oxi-image-hover.oxi-touch .oxi-image-hover-figure .oxi-image-hover-figure-caption{
     opacity: 1;
     pointer-events: auto;
 }
-.oxi-image-general-hover-style-32 .oxi-image-hover-figure:hover .oxi-image-hover-image,
-.oxi-image-general-hover-style-32 .oxi-image-hover-figure.oxi-touch .oxi-image-hover-image{
+.oxi-image-general-hover-style-32.oxi-image-hover:hover .oxi-image-hover-figure .oxi-image-hover-image,
+.oxi-image-general-hover-style-32.oxi-image-hover.oxi-touch .oxi-image-hover-figure .oxi-image-hover-image{
     pointer-events: none;
 }

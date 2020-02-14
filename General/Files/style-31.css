@@ -16,8 +16,8 @@
     transform: translate(0, 0) rotate(0);
 }
 
-.oxi-image-general-hover-style-31 .oxi-image-hover-figure:hover .oxi-image-hover-figure-caption,
-.oxi-image-general-hover-style-31 .oxi-image-hover-figure.oxi-touch .oxi-image-hover-figure-caption{
+.oxi-image-general-hover-style-31.oxi-image-hover:hover .oxi-image-hover-figure .oxi-image-hover-figure-caption,
+.oxi-image-general-hover-style-31.oxi-image-hover.oxi-touch .oxi-image-hover-figure .oxi-image-hover-figure-caption{
     opacity: 0;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
@@ -27,8 +27,8 @@
     opacity: 0;
     pointer-events: none;
 }
-.oxi-image-general-hover-style-31 .oxi-image-hover-figure:hover .oxi-image-hover-image,
-.oxi-image-general-hover-style-31 .oxi-image-hover-figure.oxi-touch .oxi-image-hover-image{
+.oxi-image-general-hover-style-31.oxi-image-hover:hover .oxi-image-hover-figure .oxi-image-hover-image,
+.oxi-image-general-hover-style-31.oxi-image-hover.oxi-touch .oxi-image-hover-figure .oxi-image-hover-image{
     opacity: 1;
     pointer-events: auto;
 }

@@ -8,8 +8,8 @@
     transition: all 1s ease-out 0s;
 }
 
-.oxi-image-general-hover-style-28 .oxi-image-hover-figure:hover .oxi-image-hover-image,
-.oxi-image-general-hover-style-28 .oxi-image-hover-figure.oxi-touch .oxi-image-hover-image{
+.oxi-image-general-hover-style-28.oxi-image-hover:hover .oxi-image-hover-figure .oxi-image-hover-image,
+.oxi-image-general-hover-style-28.oxi-image-hover.oxi-touch .oxi-image-hover-figure .oxi-image-hover-image{
     opacity: 0;
     pointer-events: none;
 }
@@ -20,8 +20,8 @@
     -ms-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
 }
-.oxi-image-general-hover-style-28 .oxi-image-hover-figure.left_to_right:hover .oxi-image-hover-image,
-.oxi-image-general-hover-style-28 .oxi-image-hover-figure.left_to_right.oxi-touch .oxi-image-hover-image{
+.oxi-image-general-hover-style-28.oxi-image-hover:hover .oxi-image-hover-figure.left_to_right .oxi-image-hover-image,
+.oxi-image-general-hover-style-28.oxi-image-hover.oxi-touch .oxi-image-hover-figure.left_to_right .oxi-image-hover-image{
     -webkit-transform: perspective(800px) rotateY(180deg);
     transform: perspective(800px) rotateY(180deg);
 }
@@ -32,8 +32,8 @@
     -ms-transform-origin: 50% 50% ;
     transform-origin: 50% 50% ;
 }
-.oxi-image-general-hover-style-28 .oxi-image-hover-figure.right_to_left:hover .oxi-image-hover-image,
-.oxi-image-general-hover-style-28 .oxi-image-hover-figure.right_to_left.oxi-touch .oxi-image-hover-image{
+.oxi-image-general-hover-style-28.oxi-image-hover:hover .oxi-image-hover-figure.right_to_left .oxi-image-hover-image,
+.oxi-image-general-hover-style-28.oxi-image-hover.oxi-touch .oxi-image-hover-figure.right_to_left .oxi-image-hover-image{
     -webkit-transform: perspective(800px) rotateY(-180deg);
     transform: perspective(800px) rotateY(-180deg);
 
@@ -45,8 +45,8 @@
     -ms-transform-origin: 50% 50% ;
     transform-origin: 50% 50% ;
 }
-.oxi-image-general-hover-style-28 .oxi-image-hover-figure.bottom_to_top:hover .oxi-image-hover-image,
-.oxi-image-general-hover-style-28 .oxi-image-hover-figure.bottom_to_top.oxi-touch .oxi-image-hover-image{
+.oxi-image-general-hover-style-28.oxi-image-hover:hover .oxi-image-hover-figure.bottom_to_top .oxi-image-hover-image,
+.oxi-image-general-hover-style-28.oxi-image-hover.oxi-touch .oxi-image-hover-figure.bottom_to_top .oxi-image-hover-image{
     -webkit-transform: perspective(800px) rotateX(-180deg);
     transform: perspective(800px) rotateX(-180deg);
 }
@@ -57,8 +57,8 @@
     -ms-transform-origin: 50% 50% ;
     transform-origin: 50% 50% ;
 }
-.oxi-image-general-hover-style-28 .oxi-image-hover-figure.top_to_bottom:hover .oxi-image-hover-image,
-.oxi-image-general-hover-style-28 .oxi-image-hover-figure.top_to_bottom.oxi-touch .oxi-image-hover-image{
+.oxi-image-general-hover-style-28.oxi-image-hover:hover .oxi-image-hover-figure.top_to_bottom .oxi-image-hover-image,
+.oxi-image-general-hover-style-28.oxi-image-hover.oxi-touch .oxi-image-hover-figure.top_to_bottom .oxi-image-hover-image{
     -webkit-transform: perspective(800px) rotateX(180deg);
     transform: perspective(800px) rotateX(180deg);
 }

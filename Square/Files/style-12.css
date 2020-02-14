@@ -13,8 +13,8 @@
     transition: all 0.35s ease 0.2s;
 }
 
-.oxi-image-square-hover-style-12 .oxi-image-hover-figure:hover .oxi-image-hover-figure-caption,
-.oxi-image-square-hover-style-12 .oxi-image-hover-figure.oxi-touch .oxi-image-hover-figure-caption{
+.oxi-image-square-hover-style-12.oxi-image-hover:hover .oxi-image-hover-figure .oxi-image-hover-figure-caption,
+.oxi-image-square-hover-style-12.oxi-image-hover.oxi-touch .oxi-image-hover-figure .oxi-image-hover-figure-caption{
     visibility: visible;
     opacity: 1;
     pointer-events: auto;
@@ -25,8 +25,8 @@
     transform: scale(1);
 }
 
-.oxi-image-square-hover-style-12 .oxi-image-hover-figure:hover .oxi-image-hover-image,
-.oxi-image-square-hover-style-12 .oxi-image-hover-figure.oxi-touch .oxi-image-hover-image{
+.oxi-image-square-hover-style-12.oxi-image-hover:hover .oxi-image-hover-figure .oxi-image-hover-image,
+.oxi-image-square-hover-style-12.oxi-image-hover.oxi-touch .oxi-image-hover-figure .oxi-image-hover-image{
     opacity: 0;
     pointer-events: none;
     -webkit-transform: scale(0.5);
@@ -42,8 +42,8 @@
     -o-transform: translateX(0) rotate(0);
     transform: translateX(0) rotate(0);
 }
-.oxi-image-square-hover-style-12 .oxi-image-hover-figure.left_to_right:hover .oxi-image-hover-image,
-.oxi-image-square-hover-style-12 .oxi-image-hover-figure.left_to_right.oxi-touch .oxi-image-hover-image{
+.oxi-image-square-hover-style-12.oxi-image-hover:hover .oxi-image-hover-figure.left_to_right .oxi-image-hover-image,
+.oxi-image-square-hover-style-12.oxi-image-hover.oxi-touch .oxi-image-hover-figure.left_to_right .oxi-image-hover-image{
     -webkit-transform: translateX(100%) rotate(180deg);
     -moz-transform: translateX(100%) rotate(180deg);
     -ms-transform: translateX(100%) rotate(180deg);
@@ -57,8 +57,8 @@
     -o-transform: translateX(0) rotate(0);
     transform: translateX(0) rotate(0);
 }
-.oxi-image-square-hover-style-12 .oxi-image-hover-figure.right_to_left:hover .oxi-image-hover-image,
-.oxi-image-square-hover-style-12 .oxi-image-hover-figure.right_to_left.oxi-touch .oxi-image-hover-image{
+.oxi-image-square-hover-style-12.oxi-image-hover:hover .oxi-image-hover-figure.right_to_left .oxi-image-hover-image,
+.oxi-image-square-hover-style-12.oxi-image-hover.oxi-touch .oxi-image-hover-figure.right_to_left .oxi-image-hover-image{
     -webkit-transform: translateX(-100%) rotate(-180deg);
     -moz-transform: translateX(-100%) rotate(-180deg);
     -ms-transform: translateX(-100%) rotate(-180deg);
@@ -72,8 +72,8 @@
     -o-transform: translateY(0);
     transform: translateY(0);
 }
-.oxi-image-square-hover-style-12 .oxi-image-hover-figure.top_to_bottom:hover .oxi-image-hover-image,
-.oxi-image-square-hover-style-12 .oxi-image-hover-figure.top_to_bottom.oxi-touch .oxi-image-hover-image{
+.oxi-image-square-hover-style-12.oxi-image-hover:hover .oxi-image-hover-figure.top_to_bottom .oxi-image-hover-image,
+.oxi-image-square-hover-style-12.oxi-image-hover.oxi-touch .oxi-image-hover-figure.top_to_bottom .oxi-image-hover-image{
     -webkit-transform: translateY(-100%);
     -moz-transform: translateY(-100%);
     -ms-transform: translateY(-100%);
@@ -87,8 +87,8 @@
     -o-transform: translateY(0);
     transform: translateY(0);
 }
-.oxi-image-square-hover-style-12 .oxi-image-hover-figure.bottom_to_top:hover .oxi-image-hover-image,
-.oxi-image-square-hover-style-12 .oxi-image-hover-figure.bottom_to_top.oxi-touch .oxi-image-hover-image{
+.oxi-image-square-hover-style-12.oxi-image-hover:hover .oxi-image-hover-figure.bottom_to_top .oxi-image-hover-image,
+.oxi-image-square-hover-style-12.oxi-image-hover.oxi-touch .oxi-image-hover-figure.bottom_to_top .oxi-image-hover-image{
     -webkit-transform: translateY(100%);
     -moz-transform: translateY(100%);
     -ms-transform: translateY(100%);
