@@ -288,7 +288,18 @@ class Modules extends Admin_Render {
                 ],
             ],
             'selector' => [
-                '{{WRAPPER}} .oxi-image-caption-hover:hover,{{WRAPPER}} .oxi-image-caption-hover.oxi-touch, {{WRAPPER}} .oxi-image-caption-hover:hover .oxi-image-hover-figure,{{WRAPPER}} .oxi-image-caption-hover.oxi-touch .oxi-image-hover-figure, {{WRAPPER}} .oxi-image-caption-hover:hover .oxi-image-hover-image, {{WRAPPER}} .oxi-image-caption-hover.oxi-touch .oxi-image-hover-image, {{WRAPPER}} .oxi-image-caption-hover:hover .oxi-image-hover-image img, {{WRAPPER}} .oxi-image-caption-hover.oxi-touch .oxi-image-hover-image img, {{WRAPPER}} .oxi-image-caption-hover:hover .oxi-image-hover-figure-caption, {{WRAPPER}} .oxi-image-caption-hover.oxi-touch .oxi-image-hover-figure-caption,{{WRAPPER}} .oxi-image-caption-hover:hover .oxi-image-hover-caption-tab, {{WRAPPER}} .oxi-image-caption-hover.oxi-touch .oxi-image-hover-caption-tab' => 'border-radius:{{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                '{{WRAPPER}} .oxi-image-caption-hover:hover,'
+                . '{{WRAPPER}} .oxi-image-caption-hover.oxi-touch,'
+                . '{{WRAPPER}} .oxi-image-caption-hover:hover .oxi-image-hover-figure,'
+                . '{{WRAPPER}} .oxi-image-caption-hover.oxi-touch .oxi-image-hover-figure, '
+                . '{{WRAPPER}} .oxi-image-caption-hover:hover .oxi-image-hover-image, '
+                . '{{WRAPPER}} .oxi-image-caption-hover.oxi-touch .oxi-image-hover-image, '
+                . '{{WRAPPER}} .oxi-image-caption-hover:hover .oxi-image-hover-image img, '
+                . '{{WRAPPER}} .oxi-image-caption-hover.oxi-touch .oxi-image-hover-image img, '
+                . '{{WRAPPER}} .oxi-image-caption-hover:hover .oxi-image-hover-figure-caption, '
+                . '{{WRAPPER}} .oxi-image-caption-hover.oxi-touch .oxi-image-hover-figure-caption,'
+                . '{{WRAPPER}} .oxi-image-caption-hover:hover .oxi-image-hover-caption-tab, '
+                . '{{WRAPPER}} .oxi-image-caption-hover.oxi-touch .oxi-image-hover-caption-tab' => 'border-radius:{{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
                 ]
         );
@@ -638,7 +649,7 @@ class Modules extends Admin_Render {
             ]
                 ]
         );
-         $this->add_group_control(
+        $this->add_group_control(
                 'oxi-image-hover-button-border',
                 $this->style,
                 [

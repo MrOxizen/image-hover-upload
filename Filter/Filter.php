@@ -101,7 +101,7 @@ class Filter extends Create {
                             </div>
                             <div class="oxi-addons-style-preview-bottom">
                                 <div class="oxi-addons-style-preview-bottom-left">
-                <?php echo $value['name']; ?>
+                                    <?php echo $value['name']; ?>
                                 </div>
                                 <div class="oxi-addons-style-preview-bottom-right">
                                     <button class="btn btn-warning oxi-addons-addons-style-btn-warning" title="Delete" data-value="<?php echo $id; ?>" data-effects="<?php echo $this->effects; ?>" type="button" value="Deactive" name="styledelete<?php echo $id; ?>">Deactive</button>  
@@ -132,9 +132,9 @@ class Filter extends Create {
                         </div>
                     </div>
                 </div>
-            <?php
-        endif;
-        ?>
+                <?php
+            endif;
+            ?>
 
 
         </div>
@@ -173,16 +173,16 @@ class Filter extends Create {
                                 </div>
                                 <div class="oxi-addons-style-preview-bottom-right">
                                     <?php
-                                    if (apply_filters('oxi-image-hover-plugin-version', false) == true):
+                                    if (apply_filters('oxi-image-hover-plugin-version', false) == true || array_key_exists($key, $this->pre_clecked)):
                                         ?>
                                         <button class="btn btn-success oxi-addons-addons-style-btn-active" title="Active Templates" data-value="<?php echo $id; ?>" data-effects="<?php echo $this->effects; ?>" type="button" value="Active" name="styleactive<?php echo $id; ?>">Active Templates</button>  
                                         <?php
                                     else:
                                         ?>
                                         <button class="btn btn-danger" title="Premium Templates"  type="button" value="Premium Templates" name="styleactive<?php echo $id; ?>">Premium Templates</button>  
-                <?php
-                endif;
-                ?>
+                                    <?php
+                                    endif;
+                                    ?>
                                 </div>
                             </div>
                         </div>
