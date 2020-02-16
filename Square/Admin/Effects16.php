@@ -112,10 +112,10 @@ class Effects16 extends Modules {
                 ],
             ],
             'selector' => [
-                '{{WRAPPER}} .oxi-image-square-hover-style-16 .oxi-image-hover-figure.top_to_bottom:hover .oxi-image-hover-image, '
-                . '{{WRAPPER}} .oxi-image-square-hover-style-16 .oxi-image-hover-figure.top_to_bottom.oxi-touch .oxi-image-hover-image ' => '-webkit-transform: translateY({{SIZE}}{{UNIT}}); -moz-transform: translateY({{SIZE}}{{UNIT}}); -ms-transform: translateY({{SIZE}}{{UNIT}}); transform: translateY({{SIZE}}{{UNIT}});',
-                '{{WRAPPER}} .oxi-image-square-hover-style-16 .oxi-image-hover-figure.bottom_to_top:hover .oxi-image-hover-image, '
-                . '{{WRAPPER}} .oxi-image-square-hover-style-16 .oxi-image-hover-figure.bottom_to_top.oxi-touch .oxi-image-hover-image' => '-webkit-transform: translateY(-{{SIZE}}{{UNIT}}); -moz-transform: translateY(-{{SIZE}}{{UNIT}}); -ms-transform: translateY(-{{SIZE}}{{UNIT}}); transform: translateY(-{{SIZE}}{{UNIT}});',
+                '{{WRAPPER}} .oxi-image-square-hover-style-16:hover .oxi-image-hover-figure.top_to_bottom .oxi-image-hover-image, '
+                . '{{WRAPPER}} .oxi-image-square-hover-style-16.oxi-touch .oxi-image-hover-figure.top_to_bottom .oxi-image-hover-image ' => '-webkit-transform: translateY({{SIZE}}{{UNIT}}); -moz-transform: translateY({{SIZE}}{{UNIT}}); -ms-transform: translateY({{SIZE}}{{UNIT}}); transform: translateY({{SIZE}}{{UNIT}});',
+                '{{WRAPPER}} .oxi-image-square-hover-style-16:hover .oxi-image-hover-figure.bottom_to_top .oxi-image-hover-image, '
+                . '{{WRAPPER}} .oxi-image-square-hover-style-16.oxi-touch .oxi-image-hover-figure.bottom_to_top .oxi-image-hover-image' => '-webkit-transform: translateY(-{{SIZE}}{{UNIT}}); -moz-transform: translateY(-{{SIZE}}{{UNIT}}); -ms-transform: translateY(-{{SIZE}}{{UNIT}}); transform: translateY(-{{SIZE}}{{UNIT}});',
                 '{{WRAPPER}} .oxi-image-square-hover-style-16 .oxi-image-hover-figure .oxi-image-hover-figure-caption' => 'height: {{SIZE}}{{UNIT}};',
             ],
                 ]
@@ -228,7 +228,7 @@ class Effects16 extends Modules {
             ]
                 ]
         );
-        
+
         $this->add_group_control(
                 'oxi-image-hover-heading-tx-shadow', $this->style, [
             'type' => Controls::TEXTSHADOW,

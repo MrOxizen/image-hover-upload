@@ -112,10 +112,10 @@ class Effects17 extends Modules {
                 ],
             ],
             'selector' => [
-                '{{WRAPPER}} .oxi-image-square-hover-style-17 .oxi-image-hover-figure.top_to_bottom:hover .oxi-image-hover-image, '
-                . '{{WRAPPER}} .oxi-image-square-hover-style-17 .oxi-image-hover-figure.top_to_bottom.oxi-touch .oxi-image-hover-image ' => '-webkit-transform: translateY({{SIZE}}{{UNIT}}); -moz-transform: translateY({{SIZE}}{{UNIT}}); -ms-transform: translateY({{SIZE}}{{UNIT}}); transform: translateY({{SIZE}}{{UNIT}});',
-                '{{WRAPPER}} .oxi-image-square-hover-style-17 .oxi-image-hover-figure.bottom_to_top:hover .oxi-image-hover-image, '
-                . '{{WRAPPER}} .oxi-image-square-hover-style-17 .oxi-image-hover-figure.bottom_to_top.oxi-touch .oxi-image-hover-image' => '-webkit-transform: translateY(-{{SIZE}}{{UNIT}}); -moz-transform: translateY(-{{SIZE}}{{UNIT}}); -ms-transform: translateY(-{{SIZE}}{{UNIT}}); transform: translateY(-{{SIZE}}{{UNIT}});',
+                '{{WRAPPER}} .oxi-image-square-hover-style-17:hover .oxi-image-hover-figure.top_to_bottom .oxi-image-hover-image, '
+                . '{{WRAPPER}} .oxi-image-square-hover-style-17.oxi-touch .oxi-image-hover-figure.top_to_bottom .oxi-image-hover-image ' => '-webkit-transform: translateY({{SIZE}}{{UNIT}}); -moz-transform: translateY({{SIZE}}{{UNIT}}); -ms-transform: translateY({{SIZE}}{{UNIT}}); transform: translateY({{SIZE}}{{UNIT}});',
+                '{{WRAPPER}} .oxi-image-square-hover-style-17:hover .oxi-image-hover-figure.bottom_to_top .oxi-image-hover-image, '
+                . '{{WRAPPER}} .oxi-image-square-hover-style-17.oxi-touch .oxi-image-hover-figure.bottom_to_top .oxi-image-hover-image' => '-webkit-transform: translateY(-{{SIZE}}{{UNIT}}); -moz-transform: translateY(-{{SIZE}}{{UNIT}}); -ms-transform: translateY(-{{SIZE}}{{UNIT}}); transform: translateY(-{{SIZE}}{{UNIT}});',
                 '{{WRAPPER}} .oxi-image-square-hover-style-17 .oxi-image-hover-figure .oxi-image-hover-figure-caption' => 'height: {{SIZE}}{{UNIT}};',
             ],
                 ]
@@ -245,10 +245,10 @@ class Effects17 extends Modules {
                 ],
             ],
             'selector' => [
-                '{{WRAPPER}} .oxi-image-hover-figure:hover,'
-                . '{{WRAPPER}} .oxi-image-hover-figure.oxi-touch,'
-                . '{{WRAPPER}}  .oxi-image-hover-figure:hover:before,'
-                . '{{WRAPPER}}  .oxi-image-hover-figure.oxi-touch:before'=> 'border-radius:{{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                '{{WRAPPER}} .oxi-image-hover:hover .oxi-image-hover-figure,'
+                . '{{WRAPPER}} .oxi-image-hover.oxi-touch .oxi-image-hover-figure,'
+                . '{{WRAPPER}} .oxi-image-hover:hover  .oxi-image-hover-figure:before,'
+                . '{{WRAPPER}} .oxi-image-hover.oxi-touch  .oxi-image-hover-figure:before'=> 'border-radius:{{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
                 ]
         );
@@ -256,10 +256,10 @@ class Effects17 extends Modules {
                 'oxi-image-hover-hover-boxshadow', $this->style, [
             'type' => Controls::BOXSHADOW,
             'selector' => [
-                '{{WRAPPER}} .oxi-image-hover-figure:hover,'
-                . '{{WRAPPER}} .oxi-image-hover-figure.oxi-touch,'
-                . '{{WRAPPER}} .oxi-image-hover-figure:hover:before,'
-                . '{{WRAPPER}} .oxi-image-hover-figure.oxi-touch:before' => '',
+                '{{WRAPPER}} .oxi-image-hover:hover .oxi-image-hover-figure,'
+                . '{{WRAPPER}} .oxi-image-hover.oxi-touch .oxi-image-hover-figure,'
+                . '{{WRAPPER}} .oxi-image-hover:hover .oxi-image-hover-figure:before,'
+                . '{{WRAPPER}} .oxi-image-hover.oxi-touch .oxi-image-hover-figure:before' => '',
             ]
                 ]
         );

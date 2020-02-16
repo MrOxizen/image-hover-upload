@@ -112,7 +112,8 @@ class Effects21 extends Modules {
                 ],
             ],
             'selector' => [
-                '{{WRAPPER}} .oxi-image-square-hover-style-21 .oxi-image-hover-figure:hover .oxi-image-hover-figure-caption, {{WRAPPER}} .oxi-image-square-hover-style-21 .oxi-image-hover-figure.oxi-touch .oxi-image-hover-figure-caption' => ' height: {{SIZE}}{{UNIT}};',
+                '{{WRAPPER}} .oxi-image-square-hover-style-21:hover .oxi-image-hover-figure .oxi-image-hover-figure-caption,'
+                . ' {{WRAPPER}} .oxi-image-square-hover-style-21.oxi-touch .oxi-image-hover-figure .oxi-image-hover-figure-caption' => ' height: {{SIZE}}{{UNIT}};',
             ],
                 ]
         );
@@ -248,24 +249,24 @@ class Effects21 extends Modules {
                 ],
             ],
             'selector' => [
-                '{{WRAPPER}} .oxi-image-hover-figure:hover,'
-                . '{{WRAPPER}} .oxi-image-hover-figure.oxi-touch,'
-                . '{{WRAPPER}}  .oxi-image-hover-figure:hover:before,'
-                . '{{WRAPPER}}  .oxi-image-hover-figure.oxi-touch:before,'
-                . '{{WRAPPER}} .oxi-image-hover-figure:hover .oxi-image-hover-image,'
-                . '{{WRAPPER}} .oxi-image-hover-figure.oxi-touch .oxi-image-hover-image,'
-                . '{{WRAPPER}} .oxi-image-hover-figure:hover .oxi-image-hover-image:before,'
-                . '{{WRAPPER}} .oxi-image-hover-figure.oxi-touch .oxi-image-hover-image:before,'
-                . '{{WRAPPER}} .oxi-image-hover-figure:hover .oxi-image-hover-image img,'
-                . '{{WRAPPER}} .oxi-image-hover-figure.oxi-touch .oxi-image-hover-image img,'
-                . '{{WRAPPER}} .oxi-image-hover-figure:hover .oxi-image-hover-figure-caption,'
-                . '{{WRAPPER}} .oxi-image-hover-figure.oxi-touch .oxi-image-hover-figure-caption,'
-                . '{{WRAPPER}} .oxi-image-hover-figure:hover .oxi-image-hover-figure-caption:before,'
-                . '{{WRAPPER}} .oxi-image-hover-figure.oxi-touch .oxi-image-hover-figure-caption:before,'
-                . '{{WRAPPER}} .oxi-image-hover-figure:hover .oxi-image-hover-figure-caption:after,'
-                . '{{WRAPPER}} .oxi-image-hover-figure.oxi-touch .oxi-image-hover-figure-caption:after,'
-                . '{{WRAPPER}} .oxi-image-hover-figure:hover .oxi-image-hover-figure-caption .oxi-image-hover-caption-tab,'
-                . '{{WRAPPER}} .oxi-image-hover-figure.oxi-touch .oxi-image-hover-figure-caption .oxi-image-hover-caption-tab' => 'border-radius:{{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                '{{WRAPPER}} .oxi-image-hover:hover .oxi-image-hover-figure,'
+                . '{{WRAPPER}} .oxi-image-hover.oxi-touch .oxi-image-hover-figure,'
+                . '{{WRAPPER}} .oxi-image-hover:hover  .oxi-image-hover-figure:before,'
+                . '{{WRAPPER}} .oxi-image-hover.oxi-touch  .oxi-image-hover-figure:before,'
+                . '{{WRAPPER}} .oxi-image-hover:hover .oxi-image-hover-figure .oxi-image-hover-image,'
+                . '{{WRAPPER}} .oxi-image-hover.oxi-touch .oxi-image-hover-figure .oxi-image-hover-image,'
+                . '{{WRAPPER}} .oxi-image-hover:hover .oxi-image-hover-figure .oxi-image-hover-image:before,'
+                . '{{WRAPPER}} .oxi-image-hover.oxi-touch .oxi-image-hover-figure .oxi-image-hover-image:before,'
+                . '{{WRAPPER}} .oxi-image-hover:hover .oxi-image-hover-figure .oxi-image-hover-image img,'
+                . '{{WRAPPER}} .oxi-image-hover.oxi-touch .oxi-image-hover-figure .oxi-image-hover-image img,'
+                . '{{WRAPPER}} .oxi-image-hover:hover .oxi-image-hover-figure .oxi-image-hover-figure-caption,'
+                . '{{WRAPPER}} .oxi-image-hover.oxi-touch .oxi-image-hover-figure .oxi-image-hover-figure-caption,'
+                . '{{WRAPPER}} .oxi-image-hover:hover .oxi-image-hover-figure .oxi-image-hover-figure-caption:before,'
+                . '{{WRAPPER}} .oxi-image-hover.oxi-touch .oxi-image-hover-figure .oxi-image-hover-figure-caption:before,'
+                . '{{WRAPPER}} .oxi-image-hover:hover .oxi-image-hover-figure .oxi-image-hover-figure-caption:after,'
+                . '{{WRAPPER}} .oxi-image-hover.oxi-touch .oxi-image-hover-figure .oxi-image-hover-figure-caption:after,'
+                . '{{WRAPPER}} .oxi-image-hover:hover .oxi-image-hover-figure .oxi-image-hover-figure-caption .oxi-image-hover-caption-tab,'
+                . '{{WRAPPER}} .oxi-image-hover.oxi-touch .oxi-image-hover-figure .oxi-image-hover-figure-caption .oxi-image-hover-caption-tab' => 'border-radius:{{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
                 ]
         );
@@ -336,7 +337,8 @@ class Effects21 extends Modules {
                 ],
             ],
             'selector' => [
-                '{{WRAPPER}} .oxi-image-square-hover-style-21 .oxi-image-hover-figure:hover .oxi-image-hover-figure-caption, {{WRAPPER}} .oxi-image-square-hover-style-21 .oxi-image-hover-figure.oxi-touch .oxi-image-hover-figure-caption' => 'margin:{{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                '{{WRAPPER}} .oxi-image-square-hover-style-21:hover .oxi-image-hover-figure .oxi-image-hover-figure-caption,'
+                . ' {{WRAPPER}} .oxi-image-square-hover-style-21.oxi-touch .oxi-image-hover-figure .oxi-image-hover-figure-caption' => 'margin:{{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ]
                 ]
         );
