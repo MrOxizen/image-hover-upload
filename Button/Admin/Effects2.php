@@ -151,7 +151,7 @@ class Effects2 extends Modules {
                 ],
             ],
             'selector' => [
-                '{{WRAPPER}}   .oxi-image-hover:hover .oxi-image-hover-figure,'
+                '{{WRAPPER}}  .oxi-image-hover:hover .oxi-image-hover-figure,'
                 . '{{WRAPPER}} .oxi-image-hover.oxi-touch .oxi-image-hover-figure,'
                 . '{{WRAPPER}} .oxi-image-hover:hover  .oxi-image-hover-figure:before,'
                 . '{{WRAPPER}} .oxi-image-hover.oxi-touch .oxi-image-hover-figure:before,'

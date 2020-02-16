@@ -12,7 +12,6 @@ class Effects16 extends Public_Render {
 
     public function public_css() {
         wp_enqueue_style('oxi-image-hover-flipbox', OXI_IMAGE_HOVER_UPLOAD_URL . '/Flipbox/Files/flipbox.css', false, OXI_IMAGE_HOVER_PLUGIN_VERSION);
-        wp_enqueue_style('oxi-image-hover-flipbox-style-16', OXI_IMAGE_HOVER_UPLOAD_URL . '/Flipbox/Files/style-16.css', false, OXI_IMAGE_HOVER_PLUGIN_VERSION);
     }
 
     public function default_render($style, $child, $admin) {
@@ -22,15 +21,11 @@ class Effects16 extends Public_Render {
             $frontheading = $backheading = $frontcontent = $backcontent = $fronticon = $backicon = $button = $hr = $ht = '';
 
             if ($value['image_hover_front_heading'] != ''):
-                $frontheading = '<div class="oxi-image-hover-heading '. $style['oxi-image-flip-front-heading-underline'] .'">' . $this->text_render($value['image_hover_front_heading']) . '</div>';
+                $frontheading = '<div class="oxi-image-hover-heading ' . $style['oxi-image-flip-front-heading-underline'] . '">' . $this->text_render($value['image_hover_front_heading']) . '</div>';
             endif;
             if ($value['image_hover_back_heading'] != ''):
-                $backheading = '<div class="oxi-image-hover-heading '. $style['oxi-image-flip-back-heading-underline'] .'' . $this->style['oxi-image-flip-back-heading-animation'] . ' ' . $this->style['oxi-image-flip-back-animation-delay'] . '">' . $this->text_render($value['image_hover_back_heading']) . '</div>';
+                $backheading = '<div class="oxi-image-hover-heading ' . $style['oxi-image-flip-back-heading-underline'] . '' . $this->style['oxi-image-flip-back-heading-animation'] . ' ' . $this->style['oxi-image-flip-back-animation-delay'] . '">' . $this->text_render($value['image_hover_back_heading']) . '</div>';
             endif;
-
-//            if ($value['image_hover_front_description'] != ''):
-//                $frontcontent = '<div class="oxi-image-hover-content">' . $this->text_render($value['image_hover_front_description']) . '</div>';
-//            endif;
 
             if ($value['image_hover_back_description'] != ''):
                 $backcontent = '<div class="oxi-image-hover-content ' . $this->style['oxi-image-flip-back-desc-animation'] . ' ' . $this->style['oxi-image-flip-back-desc-animation-delay'] . '">' . $this->text_render($value['image_hover_back_description']) . '</div>';
@@ -39,10 +34,6 @@ class Effects16 extends Public_Render {
             if ($value['image_hover_front_icon'] != ''):
                 $fronticon = '<div class="oxi-image-hover-icon">' . $this->font_awesome_render($value['image_hover_front_icon']) . '</div>';
             endif;
-
-//            if ($this->media_render('image_hover_front_image', $value) != ''):
-//                $image = ' <img ' . $this->media_render('image_hover_front_image', $value) . '>';
-//            endif;
 
 
             if ($value['image_hover_button_text'] != '' && $this->url_render('image_hover_button_link', $value) != ''):
@@ -68,7 +59,7 @@ class Effects16 extends Public_Render {
                                         </div>
                                         <div class="oxi-image-hover-figure-backend">
                                             <div class="oxi-image-hover-figure-back-section ' . $this->style['oxi-image-flip-back-content-alignment'] . '">
-                                                   ' . $backheading  . $backcontent . $button . '
+                                                   ' . $backheading . $backcontent . $button . '
                                             </div>
                                         </div>
                                     </div>
