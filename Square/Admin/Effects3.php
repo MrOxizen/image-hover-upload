@@ -44,6 +44,7 @@ class Effects3 extends Modules {
             'selector' => [
                 '{{WRAPPER}} .oxi-image-square-hover-style-3 .oxi-image-hover-figure .mask1' => '',
                 '{{WRAPPER}} .oxi-image-square-hover-style-3 .oxi-image-hover-figure .mask2' => '',
+                '{{WRAPPER}} .oxi-image-square-hover-style-3 .oxi-image-hover-figure .oxi-image-hover-caption-tab' => '',
             ]
                 ]
         );
