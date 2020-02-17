@@ -46,7 +46,7 @@ class Effects3 extends Modules {
             'carousel_width',
             $this->style,
             [
-                'label' => __('Max Width', SHORTCODE_ADDOONS),
+                'label' => __('Max Width', OXI_IMAGE_HOVER_TEXTDOMAIN),
                 'type' => Controls::SLIDER,
                 'separator' => TRUE,
                 'default' => [
@@ -79,7 +79,7 @@ class Effects3 extends Modules {
             'carousel_item',
             $this->style,
             [
-                'label' => __('Item Show', SHORTCODE_ADDOONS),
+                'label' => __('Item Show', OXI_IMAGE_HOVER_TEXTDOMAIN),
                 'type' => Controls::SLIDER,
                 'default' => [
                     'unit' => 'px',
@@ -98,7 +98,7 @@ class Effects3 extends Modules {
             'carousel_grap',
             $this->style,
             [
-                'label' => __('Item Padding', SHORTCODE_ADDOONS),
+                'label' => __('Item Padding', OXI_IMAGE_HOVER_TEXTDOMAIN),
                 'type' => Controls::SLIDER,
                 'default' => [
                     'unit' => 'px',
@@ -265,7 +265,7 @@ class Effects3 extends Modules {
         $this->start_controls_section(
             'shortcode-addons',
             [
-                'label' => esc_html__('Carousel Dots', SHORTCODE_ADDOONS),
+                'label' => esc_html__('Carousel Dots', OXI_IMAGE_HOVER_TEXTDOMAIN),
                 'showing' => FALSE,
                 'condition' => [
                     'carousel_show_dots' => 'yes',
@@ -277,7 +277,7 @@ class Effects3 extends Modules {
             'carousel_dots_width_height',
             $this->style,
             [
-                'label' => __('Width & Height', SHORTCODE_ADDOONS),
+                'label' => __('Width & Height', OXI_IMAGE_HOVER_TEXTDOMAIN),
                 'type' => Controls::SLIDER,
                 'default' => [
                     'unit' => 'px',
@@ -309,7 +309,7 @@ class Effects3 extends Modules {
             'carousel_dots_position_Y',
             $this->style,
             [
-                'label' => __('Position Y', SHORTCODE_ADDOONS),
+                'label' => __('Position Y', OXI_IMAGE_HOVER_TEXTDOMAIN),
                 'type' => Controls::SLIDER,
                 'default' => [
                     'unit' => '%',
@@ -341,7 +341,7 @@ class Effects3 extends Modules {
             'carousel_dots_spacing',
             $this->style,
             [
-                'label' => __('Spacing', SHORTCODE_ADDOONS),
+                'label' => __('Spacing', OXI_IMAGE_HOVER_TEXTDOMAIN),
                 'type' => Controls::SLIDER,
                 'default' => [
                     'unit' => 'px',
@@ -373,9 +373,9 @@ class Effects3 extends Modules {
             'shortcode-addons-start-tabs',
             [
                 'options' => [
-                    'normal' => esc_html__('Normal', SHORTCODE_ADDOONS),
-                    'hover' => esc_html__('Hover', SHORTCODE_ADDOONS),
-                    'active' => esc_html__('Active', SHORTCODE_ADDOONS),
+                    'normal' => esc_html__('Normal', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                    'hover' => esc_html__('Hover', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                    'active' => esc_html__('Active', OXI_IMAGE_HOVER_TEXTDOMAIN),
                 ]
             ]
         );
@@ -385,7 +385,7 @@ class Effects3 extends Modules {
             'carousel_dots_bg_color',
             $this->style,
             [
-                'label' => __('Color', SHORTCODE_ADDOONS),
+                'label' => __('Color', OXI_IMAGE_HOVER_TEXTDOMAIN),
                 'type' => Controls::COLOR,
                 'default' => 'rgb(0, 0, 0)',
                 'oparetor' => 'RGB',
@@ -411,7 +411,7 @@ class Effects3 extends Modules {
             'carousel_dots_bg_color_hover',
             $this->style,
             [
-                'label' => __('Background', SHORTCODE_ADDOONS),
+                'label' => __('Background', OXI_IMAGE_HOVER_TEXTDOMAIN),
                 'type' => Controls::COLOR,
                 'default' => 'rgb(119, 119, 119)',
                 'oparetor' => 'RGB',
@@ -436,7 +436,7 @@ class Effects3 extends Modules {
             'carousel_dots_bg_color_active',
             $this->style,
             [
-                'label' => __('Color', SHORTCODE_ADDOONS),
+                'label' => __('Color', OXI_IMAGE_HOVER_TEXTDOMAIN),
                 'type' => Controls::COLOR,
                 'default' => '#AB00C9',
                 'oparetor' => 'RGB',
@@ -461,7 +461,7 @@ class Effects3 extends Modules {
             'carousel_dots_border_radius_normal',
             $this->style,
             [
-                'label' => __('Border Radius', SHORTCODE_ADDOONS),
+                'label' => __('Border Radius', OXI_IMAGE_HOVER_TEXTDOMAIN),
                 'type' => Controls::DIMENSIONS,
                 'separator' => TRUE,
                 'default' => [

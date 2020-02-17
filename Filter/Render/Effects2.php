@@ -11,8 +11,8 @@ use OXI_IMAGE_HOVER_PLUGINS\Page\Public_Render;
 class Effects2 extends Public_Render {
 
     public function public_jquery() {
-        wp_enqueue_script('imagesloaded.pkgd.min', OXI_IMAGE_HOVER_UPLOAD_URL . '/Filter/Files/imagesloaded.pkgd.min.js', false, SA_ADDONS_PLUGIN_VERSION);
-        wp_enqueue_script('jquery.isotope.v3.0.2', OXI_IMAGE_HOVER_UPLOAD_URL . '/Filter/Files/jquery.isotope.v3.0.2.js', false, SA_ADDONS_PLUGIN_VERSION);
+        wp_enqueue_script('imagesloaded.pkgd.min', OXI_IMAGE_HOVER_UPLOAD_URL . '/Filter/Files/imagesloaded.pkgd.min.js', false, OXI_IMAGE_HOVER_PLUGIN_VERSION);
+        wp_enqueue_script('jquery.isotope.v3.0.2', OXI_IMAGE_HOVER_UPLOAD_URL . '/Filter/Files/jquery.isotope.v3.0.2.js', false, OXI_IMAGE_HOVER_PLUGIN_VERSION);
         $this->JSHANDLE = 'jquery.isotope.v3.0.2';
     }
 

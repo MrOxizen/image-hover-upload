@@ -141,7 +141,7 @@ class Effects4 extends Modules
         );
         $this->add_control(
             'oxi_image_comparison_hover_width', $this->style, [
-                'label' => __('Hover Width', SHORTCODE_ADDOONS),
+                'label' => __('Hover Width', OXI_IMAGE_HOVER_TEXTDOMAIN),
                 'type' => Controls::SLIDER,
                 'separator' => true,
                 'default' => [
@@ -159,7 +159,7 @@ class Effects4 extends Modules
         );
         $this->add_control(
             'oxi_image_comparison_hover_transition', $this->style, [
-                'label' => __('Hover Transition', SHORTCODE_ADDOONS),
+                'label' => __('Hover Transition', OXI_IMAGE_HOVER_TEXTDOMAIN),
                 'type' => Controls::SLIDER, 
                 'default' => [
                     'unit' => 'px',

@@ -585,7 +585,7 @@ class Modules extends Admin_Render
         $this->start_controls_section(
             'shortcode-addons',
             [
-                'label' => esc_html__('Carousel Dots', SHORTCODE_ADDOONS),
+                'label' => esc_html__('Carousel Dots', OXI_IMAGE_HOVER_TEXTDOMAIN),
                 'showing' => FALSE,
                 'condition' => [
                     'carousel_show_dots' => 'yes',
@@ -596,7 +596,7 @@ class Modules extends Admin_Render
             'carousel_dots_position_size',
             $this->style,
             [
-                'label' => __('Size', SHORTCODE_ADDOONS),
+                'label' => __('Size', OXI_IMAGE_HOVER_TEXTDOMAIN),
                 'type' => Controls::SLIDER,
                 'default' => [
                     'unit' => 'px',
@@ -628,7 +628,7 @@ class Modules extends Admin_Render
             'carousel_dots_width_height',
             $this->style,
             [
-                'label' => __('Width & Height', SHORTCODE_ADDOONS),
+                'label' => __('Width & Height', OXI_IMAGE_HOVER_TEXTDOMAIN),
                 'type' => Controls::SLIDER,
                 'default' => [
                     'unit' => 'px',
@@ -661,7 +661,7 @@ class Modules extends Admin_Render
             'carousel_dots_position_Y',
             $this->style,
             [
-                'label' => __('Position Y', SHORTCODE_ADDOONS),
+                'label' => __('Position Y', OXI_IMAGE_HOVER_TEXTDOMAIN),
                 'type' => Controls::SLIDER,
                 'default' => [
                     'unit' => '%',
@@ -693,7 +693,7 @@ class Modules extends Admin_Render
             'carousel_dots_spacing',
             $this->style,
             [
-                'label' => __('Spacing', SHORTCODE_ADDOONS),
+                'label' => __('Spacing', OXI_IMAGE_HOVER_TEXTDOMAIN),
                 'type' => Controls::SLIDER,
                 'default' => [
                     'unit' => 'px',
@@ -725,9 +725,9 @@ class Modules extends Admin_Render
             'shortcode-addons-start-tabs',
             [
                 'options' => [
-                    'normal' => esc_html__('Normal', SHORTCODE_ADDOONS),
-                    'hover' => esc_html__('Hover', SHORTCODE_ADDOONS),
-                    'active' => esc_html__('Active', SHORTCODE_ADDOONS),
+                    'normal' => esc_html__('Normal', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                    'hover' => esc_html__('Hover', OXI_IMAGE_HOVER_TEXTDOMAIN),
+                    'active' => esc_html__('Active', OXI_IMAGE_HOVER_TEXTDOMAIN),
                 ]
             ]
         );
@@ -736,7 +736,7 @@ class Modules extends Admin_Render
             'carousel_dots_color',
             $this->style,
             [
-                'label' => __('Color', SHORTCODE_ADDOONS),
+                'label' => __('Color', OXI_IMAGE_HOVER_TEXTDOMAIN),
                 'type' => Controls::COLOR,
                 'default' => '#fff',
                 'oparetor' => 'RGB',
@@ -749,7 +749,7 @@ class Modules extends Admin_Render
             'carousel_dots_bg_color',
             $this->style,
             [
-                'label' => __('Background', SHORTCODE_ADDOONS),
+                'label' => __('Background', OXI_IMAGE_HOVER_TEXTDOMAIN),
                 'type' => Controls::COLOR,
                 'default' => 'rgb(0, 0, 0)',
                 'oparetor' => 'RGB',
@@ -775,7 +775,7 @@ class Modules extends Admin_Render
             'carousel_dots_color_hover',
             $this->style,
             [
-                'label' => __('Color', SHORTCODE_ADDOONS),
+                'label' => __('Color', OXI_IMAGE_HOVER_TEXTDOMAIN),
                 'type' => Controls::COLOR,
                 'default' => 'rgb(119, 119, 119)',
                 'oparetor' => 'RGB',
@@ -788,7 +788,7 @@ class Modules extends Admin_Render
             'carousel_dots_bg_color_hover',
             $this->style,
             [
-                'label' => __('Background', SHORTCODE_ADDOONS),
+                'label' => __('Background', OXI_IMAGE_HOVER_TEXTDOMAIN),
                 'type' => Controls::COLOR,
                 'default' => 'rgb(119, 119, 119)',
                 'oparetor' => 'RGB',
@@ -813,7 +813,7 @@ class Modules extends Admin_Render
             'carousel_dots_color_active',
             $this->style,
             [
-                'label' => __('Color', SHORTCODE_ADDOONS),
+                'label' => __('Color', OXI_IMAGE_HOVER_TEXTDOMAIN),
                 'type' => Controls::COLOR,
                 'default' => '#fff',
                 'oparetor' => 'RGB',
@@ -826,7 +826,7 @@ class Modules extends Admin_Render
             'carousel_dots_bg_color_active',
             $this->style,
             [
-                'label' => __('Background', SHORTCODE_ADDOONS),
+                'label' => __('Background', OXI_IMAGE_HOVER_TEXTDOMAIN),
                 'type' => Controls::COLOR,
                 'default' => '#AB00C9',
                 'oparetor' => 'RGB',
@@ -851,7 +851,7 @@ class Modules extends Admin_Render
             'carousel_dots_border_radius_normal',
             $this->style,
             [
-                'label' => __('Border Radius', SHORTCODE_ADDOONS),
+                'label' => __('Border Radius', OXI_IMAGE_HOVER_TEXTDOMAIN),
                 'type' => Controls::DIMENSIONS,
                 'separator' => TRUE,
                 'default' => [
