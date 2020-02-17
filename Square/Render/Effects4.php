@@ -129,7 +129,7 @@ class Effects4 extends Public_Render {
             'oxi-image-hover-heading-animation-delay' => '',
             'oxi-image-hover-desc-animation-delay' => '',
             'oxi-image-hover-button-animation-delay' => '',
-                        'oxi-image-hover-boxshadow-shadow' => 'yes',
+            'oxi-image-hover-boxshadow-shadow' => 'yes',
             'oxi-image-hover-boxshadow-type' => 'inset',
             'oxi-image-hover-boxshadow-horizontal-size' => 0,
             'oxi-image-hover-boxshadow-vertical-size' => 0,
@@ -158,7 +158,7 @@ class Effects4 extends Public_Render {
             'oxi-image-hover-heading-background-color' => $styledata[85],
             'oxi-image-hover-background-img' => '',
             /////
-            'oxi-image-hover-heading-underline' => ($styledata[41] == 'no' ? '' : 'oxi-image-hover-heading-underline'),
+            'oxi-image-hover-heading-underline' => ($styledata[41] == 'no' ? '' : ''),
             'oxi-image-hover-underline-color' => $styledata[35],
             ///
             'oxi-image-hover-desc-typho-size-lap-size' => $styledata[47],

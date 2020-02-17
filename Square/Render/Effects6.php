@@ -158,7 +158,7 @@ class Effects6 extends Public_Render {
             'oxi-image-hover-heading-background-color' => $styledata[85],
             'oxi-image-hover-background-img' => '',
             /////
-            'oxi-image-hover-heading-underline' => ($styledata[41] == 'no' ? '' : 'oxi-image-hover-heading-underline'),
+            'oxi-image-hover-heading-underline' => ($styledata[41] == 'no' ? '' : ''),
             'oxi-image-hover-underline-color' => $styledata[35],
             ///
             'oxi-image-hover-desc-typho-size-lap-size' => $styledata[47],

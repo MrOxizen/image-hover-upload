@@ -22,9 +22,14 @@
     transition: transform 0.4s;
 }
 .oxi-image-square-hover-style-18 .oxi-image-hover-figure .oxi-image-hover-button{
-    
+    position: absolute;
+    left: 0;
+    bottom: 0;
     width: 100%;
     
+}
+.oxi-image-square-hover-style-18 .oxi-image-hover-button {
+    text-align: right;
 }
 .oxi-image-square-hover-style-18 .oxi-image-hover-figure .oxi-image-hover-image{
    overflow: hidden;
