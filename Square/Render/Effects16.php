@@ -199,7 +199,7 @@ class Effects16 extends Public_Render {
         $row = json_encode($new);
         $this->wpdb->query($this->wpdb->prepare("UPDATE {$this->parent_table} SET rawdata = %s WHERE id = %d", $row, $this->oxiid));
         $name = explode('-', $this->dbdata['style_name']);
-        $cls = '\OXI_IMAGE_HOVER_UPLOADS\\' . $name[0] . '\Admin\\Effects' . $name[1];
+        $cls = '\OXI_IMAGE_HOVER_UPLOADS\\' . Square . '\Admin\\Effects' . $name[1];
         $CLASS = new $cls('admin');
         $CLASS->template_css_render($new);
     }
