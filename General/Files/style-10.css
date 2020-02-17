@@ -5,9 +5,6 @@
     -ms-transform: scale(0);
     -o-transform: scale(0);
     transform: scale(0);
-    -webkit-transition: all 0.35s ease-in-out;
-    -moz-transition: all 0.35s ease-in-out;
-    transition: all 0.35s ease-in-out;
 }
 .oxi-image-general-hover-style-10 .oxi-image-hover-figure .oxi-image-hover-image {
     z-index: 11;
@@ -16,9 +13,6 @@
     -ms-transform: scale(1);
     -o-transform: scale(1);
     transform: scale(1);
-    -webkit-transition: all 0.35s ease-in-out;
-    -moz-transition: all 0.35s ease-in-out;
-    transition: all 0.35s ease-in-out;
 }
 
 .oxi-image-general-hover-style-10.oxi-image-hover:hover .oxi-image-hover-figure .oxi-image-hover-image,

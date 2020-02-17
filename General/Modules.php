@@ -16,22 +16,7 @@ class Modules extends Admin_Render {
         return '';
     }
 
-    public function register_column_effects() {
-        $this->start_controls_section(
-                'oxi-image-hover', [
-            'label' => esc_html__('Column & Effects', OXI_IMAGE_HOVER_TEXTDOMAIN),
-            'showing' => TRUE,
-                ]
-        );
-        $this->add_group_control(
-                'oxi-image-hover-col', $this->style, [
-            'type' => Controls::COLUMN,
-            'selector' => [
-                '{{WRAPPER}} .oxi-image-hover-style' => '',
-            ]
-                ]
-        );
-        $this->register_effects();
+    public function register_effects_time() {
         $this->add_control(
                 'oxi-image-hover-effects-time', $this->style, [
             'label' => __('Effects Time (S)', OXI_IMAGE_HOVER_TEXTDOMAIN),
@@ -57,6 +42,25 @@ class Modules extends Admin_Render {
             ],
                 ]
         );
+    }
+
+    public function register_column_effects() {
+        $this->start_controls_section(
+                'oxi-image-hover', [
+            'label' => esc_html__('Column & Effects', OXI_IMAGE_HOVER_TEXTDOMAIN),
+            'showing' => TRUE,
+                ]
+        );
+        $this->add_group_control(
+                'oxi-image-hover-col', $this->style, [
+            'type' => Controls::COLUMN,
+            'selector' => [
+                '{{WRAPPER}} .oxi-image-hover-style' => '',
+            ]
+                ]
+        );
+        $this->register_effects();
+        $this->register_effects_time();
         $this->add_group_control(
                 'oxi-image-hover-animation', $this->style, [
             'type' => Controls::ANIMATION,
@@ -720,7 +724,7 @@ class Modules extends Admin_Render {
             ]
                 ]
         );
-        
+
         $this->add_responsive_control(
                 'oxi-image-hover-underline-distance', $this->style, [
             'label' => __('Distance', OXI_IMAGE_HOVER_TEXTDOMAIN),

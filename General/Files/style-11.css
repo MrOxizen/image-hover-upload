@@ -14,15 +14,9 @@
     -ms-transform-origin: 50% 50%;
     -o-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
-    -webkit-transition: all 0.35s ease-in-out;
-    -moz-transition: all 0.35s ease-in-out;
-    transition: all 0.35s ease-in-out;
 }
 
 .oxi-image-general-hover-style-11 .oxi-image-hover-figure{
-    -webkit-transition: all 0.35s ease-in-out;
-    -moz-transition: all 0.35s ease-in-out;
-    transition: all 0.35s ease-in-out;
     -webkit-perspective: 900px;
     -moz-perspective: 900px;
     perspective: 900px;

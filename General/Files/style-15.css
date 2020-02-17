@@ -13,11 +13,11 @@
 .oxi-image-general-hover-style-15 .oxi-image-hover-figure .oxi-image-hover-figure-caption {
     opacity: 0;
     visibility: hidden;
-    -webkit-transform: scale(0.5) rotate(-720deg);
-    -moz-transform: scale(0.5) rotate(-720deg);
-    -ms-transform: scale(0.5) rotate(-720deg);
-    -o-transform: scale(0.5) rotate(-720deg);
-    transform: scale(0.5) rotate(-720deg);
+    -webkit-transform: scale(0.8) rotate(-720deg);
+    -moz-transform: scale(0.8) rotate(-720deg);
+    -ms-transform: scale(0.8) rotate(-720deg);
+    -o-transform: scale(0.8) rotate(-720deg);
+    transform: scale(0.8) rotate(-720deg);
     -webkit-transition: all 0.35s ease-in-out 0.3s;
     -moz-transition: all 0.35s ease-in-out 0.3s;
     transition: all 0.35s ease-in-out 0.3s;
@@ -25,11 +25,11 @@
 .oxi-image-general-hover-style-15 .oxi-image-hover-figure.right_to_left .oxi-image-hover-figure-caption {
     opacity: 0;
     visibility: hidden;
-    -webkit-transform: scale(0.5) rotate(720deg);
-    -moz-transform: scale(0.5) rotate(720deg);
-    -ms-transform: scale(0.5) rotate(720deg);
-    -o-transform: scale(0.5) rotate(720deg);
-    transform: scale(0.5) rotate(720deg);
+    -webkit-transform: scale(0.8) rotate(720deg);
+    -moz-transform: scale(0.8) rotate(720deg);
+    -ms-transform: scale(0.8) rotate(720deg);
+    -o-transform: scale(0.8) rotate(720deg);
+    transform: scale(0.8) rotate(720deg);
     -webkit-transition: all 0.35s ease-in-out 0.3s;
     -moz-transition: all 0.35s ease-in-out 0.3s;
     transition: all 0.35s ease-in-out 0.3s;
@@ -39,21 +39,21 @@
 .oxi-image-general-hover-style-15.oxi-image-hover.oxi-touch .oxi-image-hover-figure .oxi-image-hover-image{
     opacity: 0;
     visibility: hidden;
-    -webkit-transform: scale(0.5) rotate(720deg);
-    -moz-transform: scale(0.5) rotate(720deg);
-    -ms-transform: scale(0.5) rotate(720deg);
-    -o-transform: scale(0.5) rotate(720deg);
-    transform: scale(0.5) rotate(720deg);
+    -webkit-transform: scale(0.8) rotate(720deg);
+    -moz-transform: scale(0.8) rotate(720deg);
+    -ms-transform: scale(0.8) rotate(720deg);
+    -o-transform: scale(0.8) rotate(720deg);
+    transform: scale(0.8) rotate(720deg);
 }
 .oxi-image-general-hover-style-15.oxi-image-hover:hover .oxi-image-hover-figure.right_to_left .oxi-image-hover-image,
 .oxi-image-general-hover-style-15.oxi-image-hover.oxi-touch .oxi-image-hover-figure.right_to_left .oxi-image-hover-image{
     opacity: 0;
     visibility: hidden;
-    -webkit-transform: scale(0.5) rotate(-720deg);
-    -moz-transform: scale(0.5) rotate(-720deg);
-    -ms-transform: scale(0.5) rotate(-720deg);
-    -o-transform: scale(0.5) rotate(-720deg);
-    transform: scale(0.5) rotate(-720deg);
+    -webkit-transform: scale(0.8) rotate(-720deg);
+    -moz-transform: scale(0.8) rotate(-720deg);
+    -ms-transform: scale(0.8) rotate(-720deg);
+    -o-transform: scale(0.8) rotate(-720deg);
+    transform: scale(0.8) rotate(-720deg);
 }
 .oxi-image-general-hover-style-15.oxi-image-hover:hover .oxi-image-hover-figure .oxi-image-hover-figure-caption,
 .oxi-image-general-hover-style-15.oxi-image-hover.oxi-touch .oxi-image-hover-figure .oxi-image-hover-figure-caption{
