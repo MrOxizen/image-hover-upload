@@ -97,7 +97,7 @@ class Effects21 extends Public_Render {
             'oxi-image-hover-col-lap' => $this->old_column_render($styledata[1], 'lap'),
             'oxi-image-hover-col-tab' => $this->old_column_render($styledata[1], 'tab'),
             'oxi-image-hover-col-mob' => $this->old_column_render($styledata[1], 'mob'),
-            'oxi-image-hover-content-height-lap-choices' => 'px',
+            'oxi-image-hover-content-height-lap-choices' => '%',
             'oxi-image-hover-content-height-lap-size' => ($styledata[7] * $styledata[3] / 100 + 20),
             'oxi-image-hover-width-lap-choices' => 'px',
             'oxi-image-hover-width-lap-size' => $styledata[5],
