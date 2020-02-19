@@ -102,7 +102,7 @@ class Effects17 extends Public_Render {
             'oxi-image-hover-width-lap-choices' => 'px',
             'oxi-image-hover-width-lap-size' => $styledata[5],
             'oxi-image-hover-height-lap-choices' => '%',
-            'oxi-image-hover-height-lap-size' => ($styledata[7]/ $styledata[5] *100),,
+            'oxi-image-hover-height-lap-size' => ($styledata[7]/ $styledata[5] *100),
             'oxi-image-hover-margin-lap-top' => $styledata[9],
             'oxi-image-hover-margin-lap-right' => $styledata[9],
             'oxi-image-hover-margin-lap-bottom' => $styledata[9],
